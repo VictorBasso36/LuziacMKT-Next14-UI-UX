@@ -10,7 +10,7 @@ export default function WhatWedo()   {
     <>
         <div className={styles.main}>
             <section className={styles.container}>
-                <p>what we do</p>
+         
             </section>
         </div>
     </>

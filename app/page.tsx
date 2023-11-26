@@ -17,13 +17,13 @@ export default function Home() {
       <ParallaxProvider>
         <Navbar />
         <MainBanner  />
-        <Divisor colorbg="#161616" side={false} colordetail='white' />
+        <Divisor id="DIFERENCIAIS" colorbg="#161616" side={false} colordetail='white' />
         <Diff />
-        <Divisor colorbg="white" side={true} colordetail='#fb2576' />
+        <Divisor id="CASES" colorbg="white" side={true} colordetail='#fb2576' />
         <Carrousel />
-        <Divisor colorbg="#fb2576" side={true} colordetail='#161616' />
+        <Divisor id="SOBRE" colorbg="#fb2576" side={true} colordetail='#161616' />
         <WhatWedo />
-        <Divisor colorbg="#161616" side={true} colordetail='white' />
+        <Divisor id="BLOG" colorbg="#161616" side={true} colordetail='white' />
         <Blog />
         <Footer/>
       </ParallaxProvider>

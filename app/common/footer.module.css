@@ -1,13 +1,120 @@
 .Main{
     width: 100%;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+    justify-content: center;
     background-color: var(--mainColor);
 }
 
 .Container{
-    height: 300px;
+    display: flex;
+    max-width: var(--max-width);
+    justify-content: space-between;
+    width: 90%;
+}
+
+.contentContact{
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+}
+
+.contentContact h6{
+    color: white;
+    text-align: start;
+    font-size: 32pt;
+}
+
+.contentContact h6 span{
+    color: var(--suportColor);
+}
+
+.contentContactDesc{
+    color: white;
+    font-size: 15pt;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.contentContactDesc span{
+    font-weight: bold;
+
+    color: var(--suportColor);
+}
+
+.whatsappButton{
+    background-color: white;
+    width: 100%;
+    max-width: 320px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+}
+
+.whatsappButton p{
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.whatsappButton p img{
+    margin-right: 10px;
+}
+
+.whatsappButton p span{
+    color: #4dc77b;
+}
+
+.emailButton{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    max-width: 320px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(100% 0, 0 15%, 0 85%, 100% 100%);
+}
+
+.emailButton p{
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.emailButton p img{
+    margin-right: 10px;
+}
+
+.emailButton p span{
+    color: var(--mainColor);
+}
+
+.contentForm{
+    width: 50%;
+}
+
+.convertItemDesc{
+    font-size: 15pt;
+    margin-top: 20px;
+    color: white;
+}
+
+.convertItemDesc span{
+    color: var(--suportColor);
+    font-weight: bold;
 }
 
 .lastItem{
+    width: 100%;
+    margin-top: 120px;
     background-color: var(--suportColor);
     display: flex;
     align-items: center;justify-content: center;

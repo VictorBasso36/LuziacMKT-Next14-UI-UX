@@ -5,13 +5,17 @@
     flex-direction: column;
     width: 100%;
     position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
     top: 0;
     z-index: 10;
+    
     height: 120px;
     background-color: var(--suportColor);
 }
 
 .container{
+    height: 120px;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.587); 
     width: 90%;
     max-width: var(--max-width);
     display: flex;

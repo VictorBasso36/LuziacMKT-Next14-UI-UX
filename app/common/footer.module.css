@@ -1,0 +1,22 @@
+.Main{
+    width: 100%;
+    background-color: var(--mainColor);
+}
+
+.Container{
+    height: 300px;
+}
+
+.lastItem{
+    background-color: var(--suportColor);
+    display: flex;
+    align-items: center;justify-content: center;
+    padding: 30px;
+    border-bottom: 10px solid var(--mainColor);
+}
+
+.lastItem img{
+    width: 90%;
+    max-width: 280px;
+    
+}

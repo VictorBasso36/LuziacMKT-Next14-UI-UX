@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import styles from './navbar.module.css'
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
+import { MouseEventHandler, useEffect, useState } from 'react';
 
 export default function Navbar() {
     
@@ -59,7 +59,7 @@ export default function Navbar() {
             }
             <ul>
                 <li>
-                    <Link href="#DIFERENCIAIS">
+                    <Link href="#DIFERENCIAIS" >
                        <p>DIFERENCIAIS</p> 
                     </Link>
                 </li>
@@ -79,7 +79,7 @@ export default function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="CONTATO">
+                    <Link href="#CONTATO">
                         <p>CONTATO</p>    
                     </Link>
                 </li>

@@ -6,20 +6,21 @@ export interface Divisor{
     colorbg: string;
     colordetail: string;
     side: boolean;
+    id?: string;
 }
-export default function Divisor({colorbg, colordetail, side} : Divisor )   {
+export default function Divisor({colorbg, colordetail, side, id} : Divisor )   {
 
   return (
     <>
 
         {side ?
-        <div className={styles.main} style={{backgroundColor: colorbg}}>
+        <div id={id} className={styles.main} style={{backgroundColor: colorbg}}>
             <div className={styles.divDetail} style={{backgroundColor: colordetail}}>
 
             </div>
         </div>
         :
-        <div className={styles.main} style={{backgroundColor: colorbg}}>
+        <div id={id} className={styles.main} style={{backgroundColor: colorbg}}>
             <div className={styles.divDetail2} style={{backgroundColor: colordetail}}>
 
             </div>

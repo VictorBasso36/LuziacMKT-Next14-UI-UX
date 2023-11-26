@@ -1,0 +1,120 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 120px;
+    background-color: var(--suportColor);
+}
+
+.container{
+    width: 90%;
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container ul{
+    display: none;
+    list-style: none;
+    color: white;
+}
+
+.container ul li{
+    color: white;
+    margin-left: 20px;
+}
+
+.container ul li p{
+    font-size: 20px;
+    transition: all 100ms ease-in-out;
+}
+
+.container ul li:hover p{
+    color: var(--mainColor);
+}
+
+.hambmenu{
+    display: flex;
+}
+
+.hambmenu{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.hambmenuContainer{
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 500ms ease-in-out;
+}
+
+.hambmenuContainer span{
+    width: 100%;
+    transform: rotate(0deg);
+    height: 4px;
+    transition: all 500ms ease-in-out;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.menuExistis{
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+
+.menuExistis span{
+    position: absolute!important;
+}
+
+.menuExistis span:nth-child(1){
+    transform: rotate(45deg);
+}
+.menuExistis span:nth-child(2){
+    transform: rotate(45deg);
+    width: 100%!important;
+}
+
+.menuExistis span:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+
+
+.hambmenuContainer span:nth-child(2){
+    width: 70%;
+}
+
+
+.hambmenuContainer:hover span{
+    background-color: var(--suportColor);
+}
+
+.hambmenuContainer:hover span:nth-child(2){
+    width: 100%;
+}
+
+
+@media screen and (min-width: 1280px) {
+    .hambmenu{
+        display: none;
+    }  
+    
+    .container ul{
+        display: flex;
+    }
+}

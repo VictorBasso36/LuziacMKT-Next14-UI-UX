@@ -8,7 +8,11 @@ export default function Diff()   {
 
   return (
     <>
+        <Parallax speed={-20}  >
+            <Image className={styles.itemParallax} src={"/parallaxDiff.svg"} width={280} height={280} alt="Imagem clientes satisfeitos - Luziac" />     
+        </Parallax>
         <div className={styles.main}>
+            
             <section className={styles.container}>
                 <div className={styles.itemChico}>
                     <Image src={"/sadChico.svg"} width={350} height={350} alt={''}  >
@@ -16,20 +20,42 @@ export default function Diff()   {
                     </Image>
                     <div className={styles.diagonalDiv}>
                         <h2> 
-                        Agência de mkt que 
-                        <span>não é especializada</span> 
-                        no ramo imobiliário: 
+                            AGÊNCIA DE MKT <br /> QUE  
+                            <span> NÃO É ESPECIALIZADA </span><br />
+                            NO RAMO IMOBILIÁRIO: 
                         </h2>
+
                     </div>
                     <ul>
-                        <li>Não sabe sobre tendências de vendas de imóveis;</li>
+                        <li>
+                            <div className={styles.square}>
+                            </div>
+                            <p><span>Não sabe</span> sobre tendências de vendas de imóveis;</p>
+                        </li>
 
-                        <li>Não está por dentro das movimentações do mercado imobiliário.
-                        Estratégias pouco adaptadas para a venda de imóvel.</li>
+                        <li><div className={styles.square}>
+                            </div>
+                            <p><span>Não está por dentro</span> das movimentações do mercado imobiliário.
+                            .</p>
+                        </li>
+                        <li>
+                            <div className={styles.square}>
+                            </div>
+                            <p><span>Estratégias pouco adaptadas</span> para a venda de imóvel</p>
 
-                        <li>Não conhece a jornada de compra do mercado imobiliário.</li>
+                        </li>
 
-                        <li>Não potencializa suas vendas ao máximo.</li>
+                        <li><div className={styles.square}>
+                            </div>
+                            <p><span>Não conhece a jornada</span>  de compra do mercado imobiliário.
+                            </p>
+                        </li>
+
+                        <li><div className={styles.square}>
+                            </div>
+                            <p>
+                            <span>Não potencializa</span> suas vendas ao máximo.</p>
+                        </li>
                     </ul>
                 </div>
                 <div className={styles.itemChico}>
@@ -38,25 +64,23 @@ export default function Diff()   {
                     </Image>
                     <div className={styles.diagonalDiv2}>
                         <h2> 
-                            <span>LUZIAC</span> - ESPECIALISTA
+                            <span>LUZIAC</span> - ESPECIALISTA <br />
                             EM MKT IMOBILIÁRIO 
                         </h2>
                     </div>
-                    <p>
+                    <p className={styles.diagonalDiv2text}>
                         <span>*</span><strong>Conecta</strong><span>*</span> você ao seu cliente de forma assertiva, rápida e otimizada, <strong>potencializando suas vendas.</strong>
                     </p>
-                    <Link href="">
-                        <button>
-                            <div>
-                                <p>Quero me <span>conectar com meus clientes!</span></p>
-                            </div>
+                   
+                        <button className={styles.convertButton}>   
+                            <p>Quero me <span>conectar <br /> com meus clientes!</span></p>
                         </button>
-                    </Link>
-                    <Parallax speed={25} startScroll={25} >
-                        <Image className={styles.itemParallax} src={"/parallaxDiff.svg"} width={125} height={125} alt="Imagem clientes satisfeitos - Luziac" />     
-                    </Parallax>
-                </div>
-            </section>
+                        <Image className={styles.covertArrow} src={"/arrowDiff.svg"} width={80} height={80} alt={"Clique para conhecer a LUZIAC - Criando Conexões"}></Image>
+                           
+                  
+                </div>  
+              
+            </section>  
         </div>
     </>
   )

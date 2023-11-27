@@ -113,12 +113,19 @@
     border: none;
     outline: none;
     padding: 40px;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
     width: 80%;
     clip-path: polygon(100% 0, 0 15%, 0 85%, 100% 100%);
     margin-top: 20px;
     position: relative;
     background-color: var(--mainColor);
 }
+
+.convertButton:hover{
+    opacity: 0.8;
+}
+
 .convertButton p{
     color: white;
     font-size: 20pt;

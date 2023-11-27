@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './footer.module.css'
 import Image from 'next/image'
 import Divisor from './divisor'
+import { Parallax } from 'react-scroll-parallax'
 
 export default function Footer()   {
 
@@ -18,18 +19,21 @@ export default function Footer()   {
                 e se você não mudar junto, fica pra trás.<br />
                 *<span>Vem com a gente e potencialize suas <br />
                 vendas através do digital!</span>*</p>
-                <div className={styles.whatsappButton}>
-                  <Link href="" target='_blank'>     
-                    <p><Image src="/footerWhatsapp.svg" width={25} height={25} alt='Whatsapp de contato para marketing imobiliário - Luziac. '></Image> CHAMA A GENTE NO <span>&nbsp;ZAP</span></p>
-                  </Link>
-                </div>
-                
+                <Link href="" target='_blank'> 
+                  <div className={styles.whatsappButton}>
+                        
+                      <p><Image src="/footerWhatsapp.svg" width={25} height={25} alt='Whatsapp de contato para marketing imobiliário - Luziac. '></Image> CHAMA A GENTE NO <span>&nbsp;ZAP</span></p>
+                    
+                  </div>
+                </Link>
                 <br />
-                <div className={styles.emailButton}>
-                  <Link href="" target='_blank'>     
-                    <p><Image src="/emailFooter.svg" width={25} height={25} alt='Email de contato para marketing imobiliário - Luziac. '></Image>ENVIE UM <span>&nbsp;E-MAIL</span></p>
-                  </Link>
-                </div>
+                <Link href="" target='_blank'> 
+                  <div className={styles.emailButton}>
+                        
+                      <p><Image src="/emailFooter.svg" width={25} height={25} alt='Email de contato para marketing imobiliário - Luziac. '></Image>ENVIE UM <span>&nbsp;E-MAIL</span></p>
+                    
+                  </div>
+                </Link>
                 <p className={styles.convertItemDesc}>
                   Ou então, preencha seus <br /> dados e *<span>nós te chamamos</span>*
                   <Image className={styles.arrowIcon} width={70} height={20} alt={"Contatos da Luziac."} src="/arrowFooter.svg"></Image>
@@ -60,10 +64,15 @@ export default function Footer()   {
 
                 </form>                  
                 <button className={styles.submitButton}>
-                  <p>Enviar (Estou pronto <br />
-                  para potencializar <br />
-                  minhas vendas.) {'>'}</p>
+                  <p><span>ENVIAR</span> (ESTOU PRONTO  <br />
+                  PARA POTENCIALIZAR  <br />
+                  MINHAS VENDAS.) <span>{'>'}</span></p>
                 </button>
+                <Parallax speed={8} startScroll={8} style={{zIndex: 2}}>
+                  <Image className={styles.footerTel} src={"/tellParallaxFooter.svg"} width={320} height={320} alt={"Telefone de contato da LUZIAC"}>
+
+                  </Image>
+                </Parallax>
               </div>
 
             </div>            

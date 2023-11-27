@@ -33,10 +33,10 @@ export default function MainBanner()   {
          
                 <Image className={styles.handsbg} src={"/bannerLogoBg.svg"} width={530} height={530} alt="Imagem clientes satisfeitos - Luziac" />
               
-                <Parallax speed={25} startScroll={25} >
+                <Parallax speed={15} startScroll={15} >
                    <Image className={styles.itemParallax} src={"/bannerDetail.svg"} width={85} height={85} alt="Imagem clientes satisfeitos - Luziac" />     
                 </Parallax>
-                <Parallax speed={-25}>
+                <Parallax speed={-15}>
                     <Image className={styles.handsParallax} src={"/bannersHands.svg"} width={530} height={530} alt="Imagem clientes satisfeitos - Luziac" />
                 </Parallax>
               

@@ -84,7 +84,14 @@
 .mainButton{
     border: none;
     outline: none;   
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
     background-color: transparent;
+}
+
+.mainButton:hover{
+    opacity: 0.8;
+
 }
 
 .clipbg{

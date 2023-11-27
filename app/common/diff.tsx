@@ -8,7 +8,7 @@ export default function Diff()   {
 
   return (
     <>
-        <Parallax speed={-20}  >
+        <Parallax speed={-10}  >
             <Image className={styles.itemParallax} src={"/parallaxDiff.svg"} width={280} height={280} alt="Imagem clientes satisfeitos - Luziac" />     
         </Parallax>
         <div className={styles.main}>

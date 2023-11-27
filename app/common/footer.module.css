@@ -4,6 +4,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('/bgFooter.svg');
+    background-repeat: no-repeat;
+    background-position: right;
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
     justify-content: center;
     background-color: var(--mainColor);
@@ -14,6 +17,7 @@
     max-width: var(--max-width);
     justify-content: space-between;
     width: 90%;
+    padding-bottom: 100px;
 }
 
 .contentContact{
@@ -52,6 +56,11 @@
     align-items: center;
     justify-content: center;
     clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+    transition: all 500ms ease-in-out;
+}
+
+.whatsappButton:hover{
+    opacity: 0.8;
 }
 
 .whatsappButton p{
@@ -80,7 +89,12 @@
     padding: 30px;
     align-items: center;
     justify-content: center;
+    transition: all 500ms ease-in-out;
     clip-path: polygon(100% 0, 0 15%, 0 85%, 100% 100%);
+}
+
+.emailButton:hover{
+    opacity: 0.8;
 }
 
 .emailButton p{
@@ -117,11 +131,14 @@
 }
 .contentForm{
     width: 50%;
+    max-width: 550px;
+    position: relative;
 }
 
 .FormMain{
     background-color: white;
-    padding: 60px;
+    padding: 70px 50px;
+    max-width: 550px;
     position: relative;
     clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
 }
@@ -138,6 +155,13 @@
 
 .FormMain input{
     width: 100%;
+    z-index: 100;
+    z-index: 12;
+    font-family: var(--Epilogue);
+    font-weight: bold;
+    font-size: 15pt;
+    padding-left: 10px;
+    transition: all 500ms ease-in-out;
     background-color: #ebebeb;
     border: none;
     height: 40px;
@@ -154,7 +178,31 @@
 .submitButton{
     background-color: var(--suportColor);
     color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+    bottom: 0;
+    margin-bottom: -80px;
+    right: 0;
+    transition: all 500ms ease-in-out;
+    margin-right: -50px;
+    padding: 30px 40px;
+    clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
     position: absolute;
+}
+
+.submitButton:hover{
+    opacity: 0.8;
+}
+
+.submitButton p{
+    font-size: 15pt;
+    font-weight: 500;
+
+}
+
+.submitButton p span{
+    color: var(--mainColor);
 }
 
 .lastItem{
@@ -173,16 +221,390 @@
     
 }
 
+.footerTel{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    pointer-events: none;
+    margin-left: -150px;
+    margin-bottom: -20px;
+}
 
 
 @media screen and (min-width: 850px) and (max-width: 1024px){
+    .Main{
+        width: 100%;
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/bgFooter.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+        justify-content: center;
+        background-color: var(--mainColor);
+    }
 
+    .Container{
+        display: flex;
+        max-width: var(--max-width);
+        justify-content: center;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
+    
+    .contentContact{
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contentContact h6{
+        color: white;
+        text-align: start;
+        font-size: 32pt;
+    }
+
+    .contentContact h6 span{
+        color: var(--suportColor);
+    }
+
+    .contentContactDesc{
+        color: white;
+        font-size: 15pt;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .contentContactDesc span{
+        font-weight: bold;
+
+        color: var(--suportColor);
+    }
+
+    .contentForm{
+        width: 100%;
+        max-width: 550px;
+        margin-top: 80px;
+        position: relative;
+    }
+
+    .arrowIcon{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: rotate(90deg);
+        margin-bottom: -30px;
+        margin-left: -60px;
+    }
+    
+    .FormMain{
+        background-color: white;
+        padding: 70px 50px;
+        max-width: 550px;
+        position: relative;
+        clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
+    }
+
+    .whatsappButton{
+        background-color: white;
+        width: 320px;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+        transition: all 500ms ease-in-out;
+    }
+
+    .emailButton{
+        background-color: white;
+        display: flex;
+        width: 320px;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        transition: all 500ms ease-in-out;
+        clip-path: polygon(100% 0, 0 15%, 0 85%, 100% 100%);
+    }
+
+    .contentContactDesc{
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 550px) and (max-width: 850px){
+    .Main{
+        width: 100%;
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/bgFooter.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+        justify-content: center;
+        background-color: var(--mainColor);
+    }
+
+    .Container{
+        display: flex;
+        max-width: var(--max-width);
+        justify-content: center;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
     
+    .contentContact{
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contentContact h6{
+        color: white;
+        text-align: start;
+        font-size: 32pt;
+    }
+
+    .contentContact h6 span{
+        color: var(--suportColor);
+    }
+
+    .contentContactDesc{
+        color: white;
+        font-size: 15pt;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .contentContactDesc span{
+        font-weight: bold;
+
+        color: var(--suportColor);
+    }
+
+    .contentForm{
+        width: 80%;
+        max-width: 550px;
+        margin-top: 80px;
+        position: relative;
+    }
+
+    .arrowIcon{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: rotate(90deg);
+        margin-bottom: -30px;
+        margin-left: -60px;
+    }
+    
+    .FormMain{
+        background-color: white;
+        padding: 70px 50px;
+        max-width: 550px;
+        position: relative;
+        clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
+    }
+
+    .whatsappButton{
+        background-color: white;
+        width: 320px;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+        transition: all 500ms ease-in-out;
+    }
+
+    .emailButton{
+        background-color: white;
+        display: flex;
+        width: 320px;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        transition: all 500ms ease-in-out;
+        clip-path: polygon(100% 0, 0 15%, 0 85%, 100% 100%);
+    }
+
+    .contentContactDesc{
+        text-align: center;
+    }   
 }
 
-@media screen and (min-width: 0px) and (max-width: 280px){
+@media screen and (min-width: 0px) and (max-width: 550px){
+    .Main{
+        width: 100%;
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/bgFooter.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+        justify-content: center;
+        background-color: var(--mainColor);
+    }
+
+    .Container{
+        display: flex;
+        max-width: var(--max-width);
+        justify-content: center;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
     
+    .contentContact{
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contentContact h6{
+        color: white;
+        text-align: start;
+        font-size: 32pt;
+    }
+
+    .contentContact h6 span{
+        color: var(--suportColor);
+    }
+
+    .contentContactDesc{
+        color: white;
+        font-size: 15pt;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .contentContactDesc span{
+        font-weight: bold;
+
+        color: var(--suportColor);
+    }
+
+    .contentForm{
+        width: 100%;
+        max-width: 550px;
+        margin-top: 80px;
+        position: relative;
+    }
+
+    .arrowIcon{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateX(-30%) rotate(-300deg);
+
+        margin-bottom: -10px;
+        margin-left: -20px;
+    }
+    
+    .FormMain{
+        background-color: white;
+        padding: 60px 30px;
+        max-width: 550px;
+        position: relative;
+        clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
+    }
+
+    .whatsappButton{
+        background-color: white;
+        width: 280px;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+        transition: all 500ms ease-in-out;
+    }
+
+    .whatsappButton p{
+        font-size: 11pt;
+    }
+
+    .emailButton{
+        background-color: white;
+        display: flex;
+        width: 280px;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+        transition: all 500ms ease-in-out;
+        clip-path: polygon(100% 0, 0 15%, 0 85%, 100% 100%);
+    }
+
+    .emailButton p{
+        font-size: 11pt;
+    }
+
+    .convertItemDesc{
+        text-align: center;
+    }
+
+    .contentContactDesc{
+        text-align: center;
+    }      
+    
+    .submitButton{
+        background-color: var(--suportColor);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: unset;
+        bottom: 0;
+        margin-bottom: -80px;
+        right: 0;
+        left: 0;
+        transition: all 500ms ease-in-out;
+        margin-right: 0px;
+        width: 100%;
+        margin-left: 0%;
+        padding: 30px 40px;
+        clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
+        position: absolute;
+    }
+
+    .footerTel {
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        transform: translateX(-50% 50%) rotate(300deg);
+        margin-bottom: -280px;
+        transform: rotate(290deg);
+    }
+}
+
+
+
+@media screen and (min-width:0px) and (max-width: 340px){
+    .submitButton p{
+        font-size: 11pt;
+    }
+
+    .FormMain{
+        background-color: white;
+        padding: 50px 20px;
+        max-width: 550px;
+        margin-bottom: -30px;
+        position: relative;
+        clip-path: polygon(100% 0, 0 5%, 0 95%, 100% 100%);
+    }
 }

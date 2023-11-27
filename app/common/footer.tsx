@@ -32,12 +32,38 @@ export default function Footer()   {
                 </div>
                 <p className={styles.convertItemDesc}>
                   Ou então, preencha seus <br /> dados e *<span>nós te chamamos</span>*
+                  <Image className={styles.arrowIcon} width={70} height={20} alt={"Contatos da Luziac."} src="/arrowFooter.svg"></Image>
                 </p>
               </div>
               <div className={styles.contentForm}>
-                <form action="">
-                  <h6>formHere</h6>
-                </form>
+                <form className={styles.FormMain} action="">
+                  <label htmlFor="">
+                    <p>Como você <span>gostaria de ser chamado?</span></p>
+                    <input type="text" />
+                  </label>
+                  <label htmlFor="">
+                    <p>Qual o nome da <span>sua empresa?</span></p>
+                    <input type="text" />
+                  </label>
+                  <label htmlFor="">
+                    <p>Qual seu <span>tipo de atuação?</span></p>
+                    <input type="text" />
+                  </label>
+                  <label htmlFor="">
+                    <p>Seu <span>zap</span> ou <span>telefone</span>:</p>
+                    <input type="tel" />
+                  </label>
+                  <label htmlFor="">
+                    <p>E por último, <span>seu melhor e-mail:</span></p>
+                    <input type="email" />
+                  </label>
+
+                </form>                  
+                <button className={styles.submitButton}>
+                  <p>Enviar (Estou pronto <br />
+                  para potencializar <br />
+                  minhas vendas.) {'>'}</p>
+                </button>
               </div>
 
             </div>            

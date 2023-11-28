@@ -10,8 +10,11 @@ export default function Carrousel()   {
     <>
         <div className={styles.main}>
             <section className={styles.container}>
-                <p>Carrousel</p>
+                <h3>EMPRESAS QUE SE <br />
+                <span>CONECTAM</span> COM OS CLIENTES:</h3>
+                <p>*<span>Clique</span>* e acesse o case completo !</p>
             </section>
+            Carrousel Here.
         </div>
     </>
   )

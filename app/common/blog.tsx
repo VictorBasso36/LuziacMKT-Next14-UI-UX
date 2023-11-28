@@ -10,7 +10,7 @@ export default function Blog()   {
     <>
         <div className={styles.main}>
             <section className={styles.container}>
-                <p>Blog</p>
+                <h5>MAIS ACESSADOS NO NOSSO <span>BLOG</span></h5>
             </section>
         </div>
     </>

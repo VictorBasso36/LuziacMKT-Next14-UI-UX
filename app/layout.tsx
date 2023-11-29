@@ -27,7 +27,7 @@ export default function RootLayout({
         <meta name="viewport" content="minimum-scale=1, initial-scale=1" />
         <meta name="language" content="pt-br"></meta>
         <meta name="keywords" content="marketing imobiliário, imobiliárias, incorporadoras, vendas estratégicas, sites imobiliários, marketing digital imobiliário, identidade visual, anúncios imobiliários, gestão imobiliária, captação imobiliária, edição imobiliária"></meta>
-        <meta name="description" content="description"></meta>
+        <meta name="description" content="Ajudando imobiliárias e incorporadoras a venderem mais com estratégias inteligentes."></meta>
       <body className={epilogue.className}>{children}</body>
     </html>
   )

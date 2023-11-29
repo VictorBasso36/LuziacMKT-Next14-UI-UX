@@ -37,9 +37,37 @@ export default function Navbar() {
   return (
     <>
     { menu && 
-        <div onClick={() => setMenu(!menu)}>
-            Menu
+        <div className={styles.mainMenuHere} onClick={() => setMenu(!menu)}>
+            <div className={styles.ModalHere}>
+            <ul className={styles.mainListNavBar}>
+                <li className={styles.mainImageCommon}>
+                <Link href="#DIFERENCIAIS">
+                    <p>DIFERENCIAIS</p>
+                </Link>
+                </li>
+                <li className={styles.mainImageCommon}>
+                <Link href="#CASES">
+                    <p>CASES</p>
+                </Link>
+                </li>
+                <li className={styles.mainImageCommon}>
+                <Link href="#SOBRE">
+                    <p>O QUE FAZEMOS?</p>
+                </Link>
+                </li>
+                <li className={styles.mainImageCommon}>
+                <Link href="#BLOG">
+                    <p>BLOG</p>
+                </Link>
+                </li>
+                <li className={styles.mainImageCommon}>
+                <Link href="#CONTATO">
+                    <p>CONTATO</p>
+                </Link>
+                </li>
+            </ul>
         </div>
+      </div>
     }
     <nav className={styles.main}>
         <div className={styles.container}>

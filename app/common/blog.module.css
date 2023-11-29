@@ -53,7 +53,7 @@
 
 @media screen and (min-width: 0px) and (max-width:550px){
     .container h5{
-        color: white;
+        color: var(--supportColor);
         font-size: 23pt;
     }
 

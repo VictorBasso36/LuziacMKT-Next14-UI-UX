@@ -1,6 +1,5 @@
 .main{
     background-color: white;
-    height: 300px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -22,13 +21,25 @@
 }
 
 .container h5{
+    margin-top: 60px;
+    margin-bottom: 60px;
     color: var(--supportColor);
     font-size: 35pt;
+    
 }
 
 .container h5 span{
     font-weight: bold;
+    position: relative;
     color: var(--mainColor);
+}
+
+.blogTitleDetail{
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: -10px;
+    position: absolute;
 }
 
 .container p{
@@ -42,6 +53,43 @@
     color: var(--mainColor);
 }
 
+
+.containerCards{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+
+
+.MainButton{
+    margin-bottom: 60px;
+    margin-top: 60px;
+    background-color: var(--mainColor);
+    border: none;
+    width: 90%;
+    max-width: 500px;
+    cursor: pointer;
+    padding: 30px;
+    transition: all 500ms ease-in-out;
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+}
+
+.MainButton:hover{
+    opacity: 0.8;
+}
+
+.MainButton p{
+    font-size: 18pt;
+    margin: unset!important;
+}
+
+.MainButton p span{
+    color: white!important;
+}
 
 @media screen and (min-width: 850px) and (max-width:1024px){
 
@@ -59,5 +107,15 @@
 
     .container p{
         width: 80%;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width:360px){
+    .containerCards{
+        width: 140%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }

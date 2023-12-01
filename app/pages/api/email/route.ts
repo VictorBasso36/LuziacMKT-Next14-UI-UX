@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer'
 
 export interface Data{
@@ -10,8 +10,9 @@ export interface Data{
 
 }
 
-export async function POST(data: Data) {
-    const dataItems = data;
+export async function handler(req: NextRequest, res: NextResponse) {
+    const dataItems: Data = await req.json();
+    console.log('@Contact', dataItems);
     const items = dataItems;
     try {
 

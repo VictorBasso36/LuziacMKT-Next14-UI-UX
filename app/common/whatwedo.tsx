@@ -69,8 +69,8 @@ export default function WhatWedo()   {
                   </div>
                 </div>
                 <div className={styles.MainCardLast}>
-                  <h4>QUER CONHECER <br /> AS <span>MELHORES <br /> SOLUÇÕES</span> PARA <br /> SEU NEGÓCIO </h4>
-                  <p>para sua <span>marca</span> ou <span>empreendimetno</span></p>
+                  <h4>QUER CONHECER <br /> AS <span>MELHORES <br /> SOLUÇÕES?</span> PARA <br /> SEU NEGÓCIO </h4>
+          
                   <div className={styles.sendButton}>
                     <p>CHEGA <span>MAIS!</span></p>
                   </div>

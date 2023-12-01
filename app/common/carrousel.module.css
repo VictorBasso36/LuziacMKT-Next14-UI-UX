@@ -40,6 +40,10 @@
     color: var(--suportColor);
 }
 
+.swiperHere{
+    width: 100%;
+}
+
 
 @media screen and (min-width: 850px) and (max-width:1024px){
 

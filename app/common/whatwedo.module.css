@@ -1,6 +1,5 @@
 .main{
     background-color: var(--suportColor);
-    height: 300px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -14,6 +13,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 100px;
     display: flex;
     text-align: center;
     width: 90%;
@@ -27,8 +27,17 @@
 }
 
 .container h4 span{
+    position: relative;
     font-weight: bold;
     color: var(--mainColor);
+}
+
+.container h4 span img{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: -10px;
 }
 
 .container p{
@@ -42,6 +51,87 @@
     color: var(--mainColor);
 }
 
+.cardsHere{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.MainCard{
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    justify-content: center;
+    margin: 20px;
+    text-align: left;
+    transition: all 500ms ease-in-out;
+    position: relative;
+    padding: 40px;
+}
+
+.MainCard h4{
+    color: var(--suportColor);
+    font-weight: bold;
+    font-size: 30pt;
+    transition: all 500ms ease-in-out;
+    width: 100%;
+}
+
+.MainCard h4 span{
+    color: var(--mainColor);
+}
+
+.MainCard p{
+    width: 100%;
+    text-align: left;
+    color: var(--suportColor);
+}
+
+.MainCard p span{
+    color: var(--suportColor);
+    font-weight: bold;
+}
+
+.MainCard:hover {
+    background-color: var(--mainColor);
+}
+
+.MainCard:hover h4{
+    color: white;
+}
+
+.MainCard:hover h4 span{
+    color: var(--suportColor);
+}
+
+.MainCard:hover p{
+    color: white;
+}
+.MainCard:hover p span{
+    color: white;
+}
+
+.clickCard{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all 500ms ease-in-out;
+    margin-right: 30%;
+    margin-bottom: -230px;
+}
+
+.MainCard:hover .clickCard{
+    margin-bottom: 30px;
+}
 
 @media screen and (min-width: 850px) and (max-width:1024px){
 
@@ -60,4 +150,32 @@
     .container p{
         width: 80%;
     }
+
+    .MainCard h4{
+        color: var(--suportColor);
+    }
+    .MainCard p{
+        width: 100%;
+        text-align: left;
+        color: var(--suportColor);
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 350px)  {
+    .MainCard{
+        width: 280px;
+        height: 280px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        justify-content: center;
+        margin: 20px;
+        text-align: left;
+        transition: all 500ms ease-in-out;
+        position: relative;
+        padding: 30px;
+    }  
 }

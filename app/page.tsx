@@ -10,11 +10,25 @@ import Diff from './common/diff'
 import Carrousel from './common/carrousel'
 import WhatWedo from './common/whatwedo'
 import Blog from './common/blog'
+import ModalPromotion from './common/modalPromotion'
+import ModalLead from './common/modalLead'
 
 export default function Home() {
+
   return (
     <>   
       <ParallaxProvider>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <ModalLead />
+        <ModalPromotion />
         <Navbar />
         <MainBanner  />
         <Divisor id="DIFERENCIAIS" colorbg="#161616" side={false} colordetail='white' />

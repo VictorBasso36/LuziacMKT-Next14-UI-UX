@@ -80,8 +80,8 @@
 
 .MainCard h4{
     color: var(--suportColor);
-    font-weight: bold;
-    font-size: 30pt;
+    font-weight: bolder!important;
+    font-size: 25pt;
     transition: all 500ms ease-in-out;
     width: 100%;
 }

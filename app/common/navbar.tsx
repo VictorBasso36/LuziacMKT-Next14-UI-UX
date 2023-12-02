@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import { MouseEventHandler, useEffect, useState } from 'react';
-
 export default function Navbar() {
     
   const [menu, setMenu] = useState(false);
@@ -34,6 +33,7 @@ export default function Navbar() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
   return (
     <>
     { menu && 
@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
       </div>
     }
-    <nav className={styles.main}>
+    <nav className={styles.main} onClick={openModal}>
         <div className={styles.container}>
             {larguraDaJanela > 550
             ?

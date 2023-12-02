@@ -3,8 +3,6 @@ import Image from 'next/image'
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import { MouseEventHandler, useEffect, useState } from 'react';
-import openModal from './modalPromotionFunctions';
-
 export default function Navbar() {
     
   const [menu, setMenu] = useState(false);

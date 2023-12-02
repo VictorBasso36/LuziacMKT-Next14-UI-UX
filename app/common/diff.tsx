@@ -3,9 +3,10 @@ import Link from 'next/link'
 import styles from './diff.module.css'
 import Image from 'next/image'
 import { Parallax } from 'react-scroll-parallax'
+import { useOpen } from './providerModal'
 
 export default function Diff()   {
-
+const { setOpen } = useOpen()
   return (
     <>
         <Parallax speed={-10}  >
@@ -71,7 +72,7 @@ export default function Diff()   {
                         <span>*</span><strong>Conecta</strong><span>*</span> você ao seu cliente de forma assertiva, rápida e otimizada, <strong>potencializando suas vendas.</strong>
                     </p>
                    
-                        <button className={styles.convertButton}>   
+                        <button onClick={() => setOpen('whatsapp')} className={styles.convertButton}>   
                             <p>Quero me <span>conectar <br /> com meus clientes!</span></p>
                         </button>
                         <Image className={styles.covertArrow} src={"/arrowDiff.svg"} width={80} height={80} alt={"Clique para conhecer a LUZIAC - Criando Conexões"}></Image>

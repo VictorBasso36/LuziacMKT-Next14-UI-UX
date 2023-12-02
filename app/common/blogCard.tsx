@@ -32,8 +32,8 @@ export default function BlogCard({ title, srcImage, description, id  } : BlogCar
                     </p>
 
                     
-                        <p className={styles.ContinueButton}>CONTINUAR LENDO <Image src="/clickBlog.svg" alt={`Leia o artigo sobre : ${title}`} height={20} width={20}></Image><span>{'>'}</span>
-                        </p>
+                        {/* <p className={styles.ContinueButton}>CONTINUAR LENDO <Image src="/clickBlog.svg" alt={`Leia o artigo sobre : ${title}`} height={20} width={20}></Image><span>{'>'}</span>
+                        </p> */}
                 
                 </div> 
             </Link>

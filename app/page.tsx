@@ -27,8 +27,8 @@ export default function Home() {
         <br />
         <br />
         <br />
-        <ModalLead />
-        <ModalPromotion />
+        {/* <ModalLead /> */}
+        {/* <ModalPromotion /> */}
         <Navbar />
         <MainBanner  />
         <Divisor id="DIFERENCIAIS" colorbg="#161616" side={false} colordetail='white' />

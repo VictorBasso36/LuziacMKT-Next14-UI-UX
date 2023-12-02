@@ -7,25 +7,30 @@ import { Parallax } from 'react-scroll-parallax'
 import { useEffect, useState } from 'react'
 
 export default function ModalPromotion()   {
-    const params = new URLSearchParams(window.location.search);
-    const open = params.get('open');
-    const [openValue, setOpenValue] = useState<string>(open || 'false');
-    const [render, setRender] = useState<boolean>(open !== 'false');
+    const [openValue, setOpenValue] = useState<string>('false');
+    const [render, setRender] = useState<boolean>(false);
 
     useEffect(() => {
-        const handlePopState = () => {
+        if (typeof window !== 'undefined' && openValue != 'true') {
             const params = new URLSearchParams(window.location.search);
             const open = params.get('open');
             setOpenValue(open || 'false');
             setRender(open !== 'false');
-        };
 
-        window.addEventListener('popstate', handlePopState);
+            const handlePopState = () => {
+                const params = new URLSearchParams(window.location.search);
+                const open = params.get('open');
+                setOpenValue(open || 'false');
+                setRender(open !== 'false');
+            };
 
-        // Limpeza na desmontagem
-        return () => {
-            window.removeEventListener('popstate', handlePopState);
-        };
+            window.addEventListener('popstate', handlePopState);
+
+            // Limpeza na desmontagem
+            return () => {
+                window.removeEventListener('popstate', handlePopState);
+            };
+        }
     }, []);
 
     function setClose() {

@@ -49,6 +49,7 @@ export default function ModalPromotion()   {
                     <button onClick={() => setOpen('whatsapp')} className={styles.mainButton} >
                         <p>CLIQUE AQUI E <span>POTENCIALIZE SUAS VENDAS</span>!</p>
                     </button>
+                    <Image src="/GIFT.svg" alt='Promoção LUZIAC' height={120} width={120} className={styles.gift}></Image>
                 </div>
             </div>
         </section>

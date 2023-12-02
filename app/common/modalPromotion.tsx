@@ -5,40 +5,25 @@ import Image from 'next/image'
 import Divisor from './divisor'
 import { Parallax } from 'react-scroll-parallax'
 import { useEffect, useState } from 'react'
+import { useOpen } from './providerModal'
+import { useSearchParams } from 'next/navigation'
 
 export default function ModalPromotion()   {
-    const [openValue, setOpenValue] = useState<string>('false');
+    const { open, setOpen } = useOpen()
     const [render, setRender] = useState<boolean>(false);
-
     useEffect(() => {
-        if (typeof window !== 'undefined' && openValue != 'true') {
-            const params = new URLSearchParams(window.location.search);
-            const open = params.get('open');
-            setOpenValue(open || 'false');
-            setRender(open !== 'false');
-
-            const handlePopState = () => {
-                const params = new URLSearchParams(window.location.search);
-                const open = params.get('open');
-                setOpenValue(open || 'false');
-                setRender(open !== 'false');
-            };
-
-            window.addEventListener('popstate', handlePopState);
-
-            // Limpeza na desmontagem
-            return () => {
-                window.removeEventListener('popstate', handlePopState);
-            };
+        if(open === 'true'){
+            setRender(true)
+        } else if(open === 'whatsapp'){
+            setRender(false)
         }
-    }, []);
+        else{
+            setRender(false)
+        }
+    }, [open])
 
     function setClose() {
-        setOpenValue('false');
-        setRender(false);
-        let params = new URLSearchParams(window.location.search);
-        params.set('open', 'false');
-        window.history.replaceState({}, '', `${window.location.pathname}?${params}`);
+        setOpen('false')
     }
 
     if (!render) {
@@ -61,7 +46,7 @@ export default function ModalPromotion()   {
                     <span>50% DE DESCONTO NO PRIMEIRO MÊS DE INVESTIMENTO!  </span>
                     </p>
                     <br />
-                    <button className={styles.mainButton}>
+                    <button onClick={() => setOpen('whatsapp')} className={styles.mainButton} >
                         <p>CLIQUE AQUI E <span>POTENCIALIZE SUAS VENDAS</span>!</p>
                     </button>
                 </div>

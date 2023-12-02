@@ -1,6 +1,5 @@
 .main{
     background-color: var(--mainColor);
-    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,11 +21,21 @@
 .container h3{
     color: white;
     font-size: 35pt;
+    margin-top: 60px;
 }
 
 .container h3 span{
+    position: relative;
     font-weight: bold;
     color: var(--suportColor);
+}
+
+.container h3 span img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: -10px;
 }
 
 .container p{
@@ -42,6 +51,75 @@
 
 .swiperHere{
     width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MyImage{
+    width: 280px;
+    height: 280px;
+    position: relative;
+    background-color: white;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    justify-content: center;
+    margin-right: 20px;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+}
+
+.MyImage2{
+    width: 280px;
+    height: 280px;
+    position: relative;
+    clip-path: polygon(100% 0, 1% 10%, 0 90%, 100% 100%);
+    background-color: white;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+
+.content{
+    width: 280px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    justify-content: center;
+}
+
+.Slide{
+    width: 280px;
+    height: 280px;
+}
+
+/* .shadow{
+    width: 280px;
+    z-index: 1;
+    height: 280px;
+    position: absolute;
+    background-color: black;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+} */
+
+.content img{
+    width: 80%;
+    height: unset;
 }
 
 

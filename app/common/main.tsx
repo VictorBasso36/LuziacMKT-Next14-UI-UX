@@ -3,9 +3,12 @@ import Link from 'next/link'
 import styles from './main.module.css'
 import { Parallax } from 'react-scroll-parallax';
 import Image from 'next/image';
+import { useOpen } from './providerModal';
 export default function MainBanner()   {
 
-  return (
+    const { open, setOpen } = useOpen()
+
+    return (
     
         <main className={styles.main}>
             <div className={styles.container}>  
@@ -21,13 +24,13 @@ export default function MainBanner()   {
                     digitais que funcionam</strong>.</h1>
                     <br />
                     <br />
-                    <Link href="/">
-                        <button className={styles.mainButton}>
+                    
+                        <button onClick={() => setOpen('whatsapp')} className={styles.mainButton}>
                             <div className={styles.clipbg}>
                                 <p>QUERO <strong>POTENCIALIZAR</strong> MINHAS VENDAS!</p>
                             </div>
                         </button>
-                    </Link>
+                    
                  
                 </div>  
          

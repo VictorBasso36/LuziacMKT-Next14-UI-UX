@@ -18,12 +18,12 @@ export default function Carrousel()   {
             <section className={styles.container}>
                 <h3>EMPRESAS QUE SE <br />
                 <span>CONECTAM<Image className={styles.blogTitleDetail} src="/squashWhite.svg" width={400} height={20} alt="Blog Luziac - Artigos Imobiliarios"></Image></span> COM OS CLIENTES:</h3>
-                <p>*<span>Clique</span>* e acesse o case completo !</p>
+                {/* <p>*<span>Clique</span>* e acesse o case completo !</p> */}
             </section>
             <div className={styles.swiperHere}>
             <Swiper
                 spaceBetween={30}
-                slidesPerView={'auto'}
+                slidesPerView='auto'
                 centeredSlides={false}
                 loop={true}
                 grabCursor={true}
@@ -34,21 +34,58 @@ export default function Carrousel()   {
                 }}
                 className={styles.swiperMain}
               >
+                  <SwiperSlide key={2} className={styles.Slide}>
+                    <div className={styles.MyImage2} style={{backgroundImage: `url('/CLUBE.webp')`}}>
+                      <div className={styles.shadow2}>
+
+                      </div>
+                      <div className={styles.content}>
+                        <Image src="/unita.png" width={200} height={200} alt={''}></Image>
+                      </div>
+                    </div>
+                  
+                  </SwiperSlide>
                   <SwiperSlide key={1} className={styles.Slide}>
                     <div className={styles.MyImage} style={{backgroundImage: `url('/CLUBE.webp')`}}>
-                      item
+                      <div className={styles.shadow}>
+
+                      </div>
+                      <div className={styles.content}>
+                        <Image src="/reallife.png" width={200} height={200} alt={''}></Image>
+                      </div>
                     </div>
                   
                   </SwiperSlide>
                   <SwiperSlide key={2} className={styles.Slide}>
-                    <div className={styles.MyImage} style={{backgroundImage: `url('/CENTRAL0003.webp')`}}>
-                      item
+                    <div className={styles.MyImage2} style={{backgroundImage: `url('/CLUBE.webp')`}}>
+                      <div className={styles.shadow2}>
+
+                      </div>
+                      <div className={styles.content}>
+                        <Image src="/granvellas.svg" width={200} height={200} alt={''}></Image>
+                      </div>
                     </div>
                   
                   </SwiperSlide>
                   <SwiperSlide key={3} className={styles.Slide}>
                     <div className={styles.MyImage} style={{backgroundImage: `url('/CLUBE.webp')`}}>
-                      item
+                      <div className={styles.shadow}>
+
+                      </div>
+                      <div className={styles.content}>
+                        <Image src="/fd.png" width={200} height={200} alt={''}></Image>
+                      </div>
+                    </div>
+                  
+                  </SwiperSlide>
+                  <SwiperSlide key={2} className={styles.Slide}>
+                    <div className={styles.MyImage2} style={{backgroundImage: `url('/CLUBE.webp')`}}>
+                      <div className={styles.shadow2}>
+
+                      </div>
+                      <div className={styles.content}>
+                        <Image src="/connect.png" width={200} height={200} alt={''}></Image>
+                      </div>
                     </div>
                   
                   </SwiperSlide>

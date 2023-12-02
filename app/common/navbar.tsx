@@ -74,7 +74,7 @@ export default function Navbar() {
             {larguraDaJanela > 550
             ?
             <Link href="/">
-                <Image src="/mainLogo.svg" alt='Luziac - Criando Conexões - Logo' width={280} height={60}>
+                <Image src="/mainLogo.png" alt='Luziac - Criando Conexões - Logo' width={320} height={60}>
 
                 </Image>
             </Link>

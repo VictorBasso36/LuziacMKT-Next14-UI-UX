@@ -3,9 +3,10 @@ import Link from 'next/link'
 import styles from './whatwedo.module.css'
 import Image from 'next/image'
 import { Parallax } from 'react-scroll-parallax'
+import { useOpen } from './providerModal'
 
 export default function WhatWedo()   {
-
+  const { setOpen } = useOpen()
   return (
     <>
         <div className={styles.main}>
@@ -71,7 +72,7 @@ export default function WhatWedo()   {
                 <div className={styles.MainCardLast}>
                   <h4>QUER CONHECER <br /> AS <span>MELHORES <br /> SOLUÇÕES?</span> PARA <br /> SEU NEGÓCIO </h4>
           
-                  <div className={styles.sendButton}>
+                  <div className={styles.sendButton} onClick={() => setOpen('whatsapp')}>
                     <p>CHEGA <span>MAIS!</span></p>
                   </div>
                 </div>

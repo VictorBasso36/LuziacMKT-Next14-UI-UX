@@ -218,7 +218,7 @@
 
 .lastItem img{
     width: 90%;
-    max-width: 280px;
+    max-width: unset;
     
 }
 
@@ -590,6 +590,13 @@
         transform: translateX(-50% 50%) rotate(300deg);
         margin-bottom: -280px;
         transform: rotate(290deg);
+    }
+
+    .lastItem img{
+        width: 270px;
+        height: 50px;
+        max-width: unset;
+        
     }
 }
 

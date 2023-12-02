@@ -12,23 +12,14 @@ import WhatWedo from './common/whatwedo'
 import Blog from './common/blog'
 import ModalPromotion from './common/modalPromotion'
 import ModalLead from './common/modalLead'
+import { OpenProvider } from './common/providerModal'
 
 export default function Home() {
 
   return (
     <>   
       <ParallaxProvider>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        {/* <ModalLead /> */}
-        {/* <ModalPromotion /> */}
+      <OpenProvider>
         <Navbar />
         <MainBanner  />
         <Divisor id="DIFERENCIAIS" colorbg="#161616" side={false} colordetail='white' />
@@ -40,6 +31,9 @@ export default function Home() {
         <Divisor id="BLOG" colorbg="#161616" side={true} colordetail='white' />
         <Blog />
         <Footer/>
+        <ModalPromotion />
+        <ModalLead />
+      </OpenProvider>
       </ParallaxProvider>
     </>
   )

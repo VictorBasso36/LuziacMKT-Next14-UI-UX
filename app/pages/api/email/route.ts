@@ -52,6 +52,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
     }
 }
 
-export async function GET(data: Data) {
+export async function GET() {
     return NextResponse.json({ message: "Email Sent Successfully" }, { status: 200 })
 }

@@ -20,9 +20,8 @@ export default function Diff()   {
                     </Image>
                     <div className={styles.diagonalDiv}>
                         <h2> 
-                            AGÊNCIA DE MKT <br /> QUE  
-                            <span> NÃO É ESPECIALIZADA </span><br />
-                            NO RAMO IMOBILIÁRIO: 
+                         <span>OUTRAS AGÊNCIAS</span> <br /> DE MARKETING DIGITAL
+                            
                         </h2>
 
                     </div>

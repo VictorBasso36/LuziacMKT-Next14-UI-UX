@@ -1,0 +1,210 @@
+.main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    background-color: rgba(0, 0, 0, 0.214);
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    max-width: var(--max-width);
+    width: 95%;
+    background-color: white;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    padding: 150px 40px;
+    justify-content: center;
+}
+
+.Close{
+    position: absolute;
+    top: 0;
+    transition: all 200ms ease-in-out;
+    right: 0;
+    margin-top: 60px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.Close:hover{
+    opacity: 0.8;
+    transform: rotate(-15deg);
+}
+
+
+
+.modal h1{
+
+
+    font-size: 35pt;
+    text-align: right;
+    margin-bottom: 30px;
+    color: var(--suportColor);
+}
+
+.modal h1 span{
+    position: relative;
+    color: var(--mainColor);
+}
+
+.modal h1 span img{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -10px;
+    left: 0;
+    width: 100%;
+}
+
+.itemP{
+    width: 100%;
+    text-align: left;
+    font-size: 18pt;
+}
+
+.itemPMain{
+    width: 100%;
+    text-align: left;
+    font-size: 18pt;
+}
+
+.itemPMain span{
+    font-size: 15pt;
+    font-weight: bold;
+    color: var(--mainColor);
+
+}
+.itemP span{
+    color: var(--mainColor);
+}
+
+.itemP strong{
+    font-weight: bold;
+}
+.mainButton{
+    color: white!important;
+    font-weight: 400;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.mainButton p{
+    font-size: 15pt;
+}
+
+.mainButton p span{
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+
+
+.mainButton{
+    transition: all 500ms ease-in-out;
+    background-color: var(--suportColor);
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+}
+
+.mainButton:hover{
+    opacity: 0.8;
+}
+
+@media screen and (min-width:0px) and (max-width:550px){
+
+    .modal{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        max-width: var(--max-width);
+        width: 95%;
+        background-color: white;
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+        padding: 150px 20px;
+        justify-content: center;
+    }
+    .modal h1{
+
+        width: 100%;
+        font-size: 20pt;
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--suportColor);
+    }
+    
+    .modal h1 span{
+        position: relative;
+        color: var(--mainColor);
+    }
+    
+    .modal h1 span img{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -10px;
+        left: 0;
+        width: 100%;
+    }   
+    .itemP{
+        width: 100%;
+        text-align: center;
+        font-size: 14pt;
+    }
+    
+    .itemPMain{
+        width: 100%;
+        text-align: center;
+        font-size: 14pt;
+    }
+    
+    .itemPMain span{
+        font-size: 14pt;
+        font-weight: bold;
+        color: var(--mainColor);
+    
+    }
+
+    .itemP span{
+        color: var(--mainColor);
+    }
+    
+    .itemP strong{
+        font-weight: bold;
+    }
+
+    .mainButton p{
+        font-size: 13pt;
+    }
+    
+    
+    
+    .mainButton{
+        transition: all 500ms ease-in-out;
+        cursor: pointer;
+        background-color: var(--suportColor);
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+    }
+
+    .mainButton:hover{
+        opacity: 0.8;
+    }
+    
+}

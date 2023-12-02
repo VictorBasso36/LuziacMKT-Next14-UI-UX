@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
       </div>
     }
-    <nav className={styles.main} onClick={openModal}>
+    <nav className={styles.main}>
         <div className={styles.container}>
             {larguraDaJanela > 550
             ?

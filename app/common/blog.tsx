@@ -11,6 +11,9 @@ export default function Blog()   {
   return (
     <>
         <div className={styles.main}>
+            <Parallax speed={-10} className={styles.itemParallax}>
+                <Image  src={"/parallaxDiff.svg"} width={280} height={280} alt="Imagem clientes satisfeitos - Luziac" />     
+            </Parallax>
             <section className={styles.container}>
                 <h5>MAIS ACESSADOS NO <span>NOSSO <Image className={styles.blogTitleDetail} src="/squashBlack.svg" width={400} height={20} alt="Blog Luziac - Artigos Imobiliarios"></Image>BLOG</span></h5>
                 <div className={styles.containerCards}>

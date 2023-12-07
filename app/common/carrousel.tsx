@@ -9,12 +9,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Virtual } from 'swiper/modules';
 
-
 export default function Carrousel()   {
 
   return (
     <>
         <div className={styles.main}>
+                <Parallax className={styles.itemParallaxWhite} speed={-5} startScroll={15} >
+                   <Image  src={"/whiteParrallax.svg"} width={85} height={85} alt="Imagem clientes satisfeitos - Luziac" />     
+                </Parallax>
+                <Parallax speed={15} className={styles.itemParallaxBlack}>
+                    <Image  src={"/blackParallax.svg"} width={85} height={85} alt="Imagem clientes satisfeitos - Luziac" />
+                </Parallax>
             <section className={styles.container}>
                 <h3>EMPRESAS QUE SE <br />
                 <span>CONECTAM<Image className={styles.blogTitleDetail} src="/squashWhite.svg" width={400} height={20} alt="Blog Luziac - Artigos Imobiliarios"></Image></span> COM OS CLIENTES:</h3>

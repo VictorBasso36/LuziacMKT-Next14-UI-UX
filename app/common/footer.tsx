@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Divisor from './divisor'
 import { Parallax } from 'react-scroll-parallax'
 import { useState } from 'react'
+import { useOpen } from './providerModal'
 
 export default function Footer()   {
   const [sucess, setSucess] = useState(false);
@@ -37,7 +38,7 @@ export default function Footer()   {
         const responseData = await response.json();
         setSucess(true)
      
-        window.location.href = 'https://wa.me/5511992070343?text=LUZIAC%20-%20Marketing%20Imobili%C3%A1rio.';
+        window.location.href = 'https://wa.me/5511992070343?text=Oii!%20Vi%20o%20site%20da%20Luziac%20e%20quero%20potencializar%20minhas%20vendas%20com%20Marketing%20Imobili%C3%A1rio,%20pode%20me%20ajudar?%22';
         
       } else {
         console.error('Erro na solicitação:', response.status, response.statusText);
@@ -56,7 +57,7 @@ export default function Footer()   {
         [name]: value,
       }));
     };
-
+  const { setOpen } = useOpen()
   return (
     <>
         <footer id={"CONTATO"} className={styles.Main}>
@@ -69,13 +70,12 @@ export default function Footer()   {
                 e se você não mudar junto, fica pra trás.<br />
                 *<span>Vem com a gente e potencialize suas <br />
                 vendas através do digital!</span>*</p>
-                <Link href="https://wa.me/5511992070343?text=LUZIAC%20-%20Marketing%20Imobili%C3%A1rio." target='_blank'> 
-                  <div className={styles.whatsappButton}>
+                   <div className={styles.whatsappButton} onClick={() => setOpen('whatsapp')} >
                         
                       <p><Image src="/footerWhatsapp.svg" width={25} height={25} alt='Whatsapp de contato para marketing imobiliário - Luziac. '></Image> CHAMA A GENTE NO <span>&nbsp;ZAP</span></p>
                     
                   </div>
-                </Link>
+               
                 <br />
                 <Link href="mailto:Guilherme@luziac.com.br" target='_blank'> 
                   <div className={styles.emailButton}>

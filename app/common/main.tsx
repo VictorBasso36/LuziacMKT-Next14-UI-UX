@@ -9,8 +9,13 @@ export default function MainBanner()   {
     const { open, setOpen } = useOpen()
 
     return (
-    
+        
         <main className={styles.main}>
+          <div className={styles.whatsapp} onClick={() => setOpen('whatsapp')}>
+            <Image onClick={() => setOpen('whatsapp')} src='/whatsapp.svg' alt='whatsapp gran vellas' width={45} height={45}>
+
+            </Image>
+          </div>
             <div className={styles.container}>  
                 <div className={styles.content}>
                     <p className={styles.mainTitle}>

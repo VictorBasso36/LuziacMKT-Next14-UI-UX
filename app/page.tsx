@@ -12,14 +12,17 @@ import WhatWedo from './common/whatwedo'
 import Blog from './common/blog'
 import ModalPromotion from './common/modalPromotion'
 import ModalLead from './common/modalLead'
-import { OpenProvider } from './common/providerModal'
+import { OpenProvider, useOpen } from './common/providerModal'
+import Link from 'next/link'
 
 export default function Home() {
-
+  const { open, setOpen } = useOpen()
   return (
     <>   
       <ParallaxProvider>
       <OpenProvider>
+        
+       
         <Navbar />
         <MainBanner  />
         <Divisor id="DIFERENCIAIS" colorbg="#161616" side={false} colordetail='white' />

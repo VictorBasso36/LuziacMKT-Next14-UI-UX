@@ -54,7 +54,7 @@ export default function ModalLead() {
           const responseData = await response.json();
           setSucess(true)
        
-          window.location.href = 'https://wa.me/5511992070343?text=LUZIAC%20-%20Marketing%20Imobili%C3%A1rio.';
+          window.location.href = 'https://wa.me/5511992070343?text=Oii!%20Vi%20o%20site%20da%20Luziac%20e%20quero%20potencializar%20minhas%20vendas%20com%20Marketing%20Imobili%C3%A1rio,%20pode%20me%20ajudar?%22';
           
         } else {
           console.error('Erro na solicitação:', response.status, response.statusText);
@@ -87,7 +87,7 @@ export default function ModalLead() {
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="Name">
                             <p>Como você gostaria de ser chamado?</p>
-                            <input type="text" name='Name' 
+                            <input type="text" required={true} name='Name' 
                             value={formData.Name}
                             onChange={handleChange}
                             />
@@ -95,13 +95,13 @@ export default function ModalLead() {
                         </label>
                         <label htmlFor="Tel">
                             <p>Seu zap ou telefone:</p>
-                            <input type="tel" name='Tel' 
+                            <input type="tel" required={true}  name='Tel' 
                             value={formData.Tel}
                             onChange={handleChange} />
                         </label>
                         <label htmlFor="Email">
                             <p>E por último, seu melhor e-mail:</p>
-                            <input type="email" name='Email'
+                            <input type="email" required={true}  name='Email'
                             value={formData.Email}
                             onChange={handleChange} />
                         </label><br />

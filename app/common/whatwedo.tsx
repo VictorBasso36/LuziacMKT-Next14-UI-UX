@@ -27,8 +27,8 @@ export default function WhatWedo()   {
                   <div className={styles.MainCard}>
                     <h4>GESTÃO <br /> DE <span>REDES <br /> SOCIAIS</span>  </h4>
                     <p>para <span>aproximar</span> você de seus clientes</p>
-                    <Image className={styles.clickCard} src="/clickBlog.svg" alt={`O que a Luziac faz ? : CRIAÇÃO DE ID.VISUAL`} height={20} width={20}></Image>
-                  </div>
+                    {/* <Image className={styles.clickCard} src="/clickBlog.svg" alt={`O que a Luziac faz ? : CRIAÇÃO DE ID.VISUAL`} height={20} width={20}></Image>
+                  */}</div> 
                 </div>
                 <div className={styles.MainCardParallax}>
                   <div className={styles.MainCard}>

@@ -56,7 +56,14 @@ export default function Footer()   {
         ...prevData,
         [name]: value,
       }));
+      console.log( name, value)
     };
+  
+
+
+
+
+  
   const { setOpen } = useOpen()
   return (
     <>
@@ -93,8 +100,8 @@ export default function Footer()   {
                 <form onSubmit={handleSubmit} className={styles.FormMain} action="">
                   <label htmlFor="Name">
                     <p>Como você <span>gostaria de ser chamado?</span></p>
-                    <input type="text" name='Name' value={formData.Name}
-                            onChange={handleChange} />
+                    <input type="text" name='Name' value={formData.Name} onChange={handleChange}  />
+                  
                   </label>
                   <label htmlFor="Company">
                     <p>Qual o nome da <span>sua empresa?</span></p>
@@ -102,8 +109,14 @@ export default function Footer()   {
                   </label>
                   <label htmlFor="Acting">
                     <p>Qual seu <span>tipo de atuação?</span></p>
-                    <input type="text" name='Acting' value={formData.Acting}
-                            onChange={handleChange} />
+                    <select name='Acting' value={formData.Acting} onChange={(e: any) => handleChange(e)}  >
+                      <option value="Corretor(a)"><p>Corretor<span>(a)</span></p></option>
+                      <option value="Imobiliária"><p>Imobiliári<span>a</span></p></option>
+                      <option value="Construtora"><p>Construtor<span>a</span></p></option>
+                      <option value="Incorporadora"><p>Incorporador<span>a</span></p></option>
+                      <option value="Outros"><p>Outr<span>o</span>s</p></option>
+                    </select>
+                    
                   </label>
                   <label htmlFor="Tel">
                     <p>Seu <span>zap</span> ou <span>telefone</span>:</p>

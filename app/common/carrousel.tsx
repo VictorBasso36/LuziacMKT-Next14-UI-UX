@@ -7,10 +7,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import { Autoplay, Virtual } from 'swiper/modules';
+import { Autoplay, Pagination, Virtual } from 'swiper/modules';
 
 export default function Carrousel()   {
-
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index: any, className:string) {
+      return '<span class="' + className + '">' + '</span>';
+    },
+  };
   return (
     <>
         <div className={styles.main}>
@@ -29,10 +34,11 @@ export default function Carrousel()   {
             <Swiper
                 spaceBetween={30}
                 slidesPerView='auto'
-                centeredSlides={false}
+                centeredSlides={true}
                 loop={true}
                 grabCursor={true}
-                modules={[Autoplay, Virtual]}
+                modules={[Autoplay, Virtual, Pagination]}
+                pagination={pagination}
                 autoplay={{
                   delay: 2000,
                   disableOnInteraction: true,

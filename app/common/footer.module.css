@@ -170,6 +170,30 @@
     margin-bottom: 30px;
 }
 
+.FormMain select{
+    width: 100%;
+    z-index: 100;
+    z-index: 12;
+    font-family: var(--Epilogue);
+    font-weight: bold;
+    font-size: 15pt;
+    padding-left: 10px;
+    transition: all 500ms ease-in-out;
+    background-color: #ebebeb;
+    border: none;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.FormMain select option{
+    padding-top: 10px;
+    height: 30px;
+}
+
+.FormMain select option p{
+    margin-top: 10px;
+}
+
 
 
 .convertItemDesc span{

@@ -32,7 +32,7 @@ export default function Blog()   {
                     description='As fotos do imóvel geralmente representam o primeiro contato do seu cliente com a sua propriedade, e muitas delas acabam sendo compartilhadas em suas redes sociais. No entanto, se não forem bem capturadas, o Facebook e o Instagram podem penalizar você com alcance e engajamento limitados. Sabe por quê? Siga o fio:'
                   />
                   <BlogCard 
-                    title='Como a Queda da Taxa Selic Interfere nas Suas Vendas de Imóveis?'
+                    title="Como a Queda da Taxa Selic Interfere nas Suas Vendas de Imóveis"
                     id={3}
                     key={3}
                     srcImage='/blog3.PNG'

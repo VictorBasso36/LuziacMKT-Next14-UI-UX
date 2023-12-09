@@ -1,4 +1,4 @@
-"use client"
+
 import Image from 'next/image'
 import styles from './page.module.css'
 import Navbar from './common/navbar'
@@ -16,11 +16,8 @@ import { OpenProvider, useOpen } from './common/providerModal'
 import Link from 'next/link'
 
 export default function Home() {
-  const { open, setOpen } = useOpen()
   return (
     <>   
-      <ParallaxProvider>
-      <OpenProvider>
         
        
         <Navbar />
@@ -36,8 +33,7 @@ export default function Home() {
         <Footer/>
         <ModalPromotion />
         <ModalLead />
-      </OpenProvider>
-      </ParallaxProvider>
+
     </>
   )
 }

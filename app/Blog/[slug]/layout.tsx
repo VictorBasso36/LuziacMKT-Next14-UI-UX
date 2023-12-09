@@ -4,10 +4,6 @@ import '../../../app/globals.css'
 import { ParallaxProvider, OpenProvider } from '../providers/providers'
 
 
-const epilogue = Epilogue({ subsets: ['latin-ext'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], variable: '--Epilogue'})
-
-
-
 interface PropsGet {
     slugId: string,
     id: number,
@@ -18,7 +14,7 @@ interface PropsGet {
   
   export async function generateStaticParams() {
   
-    const request = (await fetch('http://localhost:3000/posts.json')).json() 
+    const request = (await fetch('/pages/api/blog')).json() 
     const posts = await request
     return posts.map((post: any) => ({
       id: post.id,
@@ -31,7 +27,7 @@ interface PropsGet {
   
   export async function generateMetadata({ params }: any): Promise<Metadata> { 
   
-    const slugMetadata = (await fetch('https://www.luziac.com.br/posts.json')).json() 
+    const slugMetadata = (await fetch('/pages/api/blog')).json() 
     const data = await slugMetadata
   
     const slug = decodeURIComponent(params?.slug)

@@ -71,7 +71,7 @@ export default function Footer()   {
 
             <div className={styles.Container}>
               <div className={styles.contentContact}>
-                <h6><Image width={35} height={35} src={"footerDarkLogo.svg"} alt='Luziac marketing imobiliário - Logo dark'></Image> LUZIAC <br /> MARKETING <br /> <span>IMOBILIÁRIO</span></h6>
+                <h6><Image width={35} height={35} src={"/footerDarkLogo.svg"} alt='Luziac marketing imobiliário - Logo dark'></Image> LUZIAC <br /> MARKETING <br /> <span>IMOBILIÁRIO</span></h6>
                 <p className={styles.contentContactDesc}>
                 O mercado imobiliário está mudando,<br />
                 e se você não mudar junto, fica pra trás.<br />
@@ -109,14 +109,7 @@ export default function Footer()   {
                   </label>
                   <label htmlFor="Acting">
                     <p>Qual seu <span>tipo de atuação?</span></p>
-                    <select name='Acting' value={formData.Acting} onChange={(e: any) => handleChange(e)}  >
-                      <option value="Corretor(a)"><p>Corretor<span>(a)</span></p></option>
-                      <option value="Imobiliária"><p>Imobiliári<span>a</span></p></option>
-                      <option value="Construtora"><p>Construtor<span>a</span></p></option>
-                      <option value="Incorporadora"><p>Incorporador<span>a</span></p></option>
-                      <option value="Outros"><p>Outr<span>o</span>s</p></option>
-                    </select>
-                    
+                    <input type="text" name='Acting' value={formData.Acting} onChange={handleChange} />   
                   </label>
                   <label htmlFor="Tel">
                     <p>Seu <span>zap</span> ou <span>telefone</span>:</p>

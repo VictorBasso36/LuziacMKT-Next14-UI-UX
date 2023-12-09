@@ -3,8 +3,9 @@ import Image from 'next/image'
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import { MouseEventHandler, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 export default function Navbar() {
-    
+const pathname = usePathname()
   const [menu, setMenu] = useState(false);
   useEffect(() => {
     if (menu) {
@@ -41,27 +42,31 @@ export default function Navbar() {
             <div className={styles.ModalHere}>
             <ul className={styles.mainListNavBar}>
                 <li className={styles.mainImageCommon}>
-                <Link href="#DIFERENCIAIS">
+                <Link href="/#DIFERENCIAIS">
                     <p>DIFERENCIAIS</p>
                 </Link>
                 </li>
                 <li className={styles.mainImageCommon}>
-                <Link href="#CASES">
+                <Link href="/#CASES">
                     <p>CASES</p>
                 </Link>
                 </li>
+                {pathname === '/' ?
+                    <li className={styles.mainImageCommon}>
+                    <Link href={"/#SOBRE"}>
+                        <p>O QUE FAZEMOS?</p>
+                    </Link>
+                    </li>
+                :
+                    <></>    
+                }
                 <li className={styles.mainImageCommon}>
-                <Link href="#SOBRE">
-                    <p>O QUE FAZEMOS?</p>
-                </Link>
-                </li>
-                <li className={styles.mainImageCommon}>
-                <Link href="#BLOG">
+                <Link href="/#BLOG">
                     <p>BLOG</p>
                 </Link>
                 </li>
                 <li className={styles.mainImageCommon}>
-                <Link href="#CONTATO">
+                <Link href="/#CONTATO">
                     <p>CONTATO</p>
                 </Link>
                 </li>
@@ -96,11 +101,15 @@ export default function Navbar() {
                         <p>CASES</p>
                     </Link>
                 </li>
-                <li>
-                    <Link href="#SOBRE">
-                        <p>O QUE FAZEMOS?</p>
-                    </Link>
-                </li>
+                {pathname === '/' ?
+                    <li>
+                        <Link href="#SOBRE">
+                            <p>O QUE FAZEMOS?</p>
+                        </Link>
+                    </li>
+                    :
+                    <></>
+                }
                 <li>
                     <Link href="#BLOG">
                         <p>BLOG</p>

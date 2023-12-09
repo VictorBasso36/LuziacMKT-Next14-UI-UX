@@ -24,6 +24,7 @@ interface PropsGet {
 
 async function getData(): Promise<PropsGet[]> {
   const slugMetadata = await (await fetch('/pages/api/blog')).json();
+  if(!slugMetadata) return []
   const data: PropsGet[] = slugMetadata;
   return data;
 }

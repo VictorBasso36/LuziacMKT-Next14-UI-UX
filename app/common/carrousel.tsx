@@ -45,7 +45,7 @@ export default function Carrousel()   {
                 }}
                 className={styles.swiperMain}
               >
-                  <SwiperSlide key={1} className={styles.Slide}>
+                  <SwiperSlide key={2} className={styles.Slide}>
                     <div className={styles.MyImage2} style={{backgroundImage: `url('/CLUBE.webp')`}}>
                       <div className={styles.shadow2}>
 
@@ -56,7 +56,7 @@ export default function Carrousel()   {
                     </div>
                   
                   </SwiperSlide>
-                  <SwiperSlide key={2} className={styles.Slide}>
+                  <SwiperSlide key={1} className={styles.Slide}>
                     <div className={styles.MyImage} style={{backgroundImage: `url('/CLUBE.webp')`}}>
                       <div className={styles.shadow}>
 
@@ -67,7 +67,7 @@ export default function Carrousel()   {
                     </div>
                   
                   </SwiperSlide>
-                  <SwiperSlide key={3} className={styles.Slide}>
+                  <SwiperSlide key={2} className={styles.Slide}>
                     <div className={styles.MyImage2} style={{backgroundImage: `url('/CLUBE.webp')`}}>
                       <div className={styles.shadow2}>
 
@@ -78,7 +78,7 @@ export default function Carrousel()   {
                     </div>
                   
                   </SwiperSlide>
-                  <SwiperSlide key={4} className={styles.Slide}>
+                  <SwiperSlide key={3} className={styles.Slide}>
                     <div className={styles.MyImage} style={{backgroundImage: `url('/CLUBE.webp')`}}>
                       <div className={styles.shadow}>
 
@@ -89,7 +89,7 @@ export default function Carrousel()   {
                     </div>
                   
                   </SwiperSlide>
-                  <SwiperSlide key={5} className={styles.Slide}>
+                  <SwiperSlide key={2} className={styles.Slide}>
                     <div className={styles.MyImage2} style={{backgroundImage: `url('/CLUBE.webp')`}}>
                       <div className={styles.shadow2}>
 

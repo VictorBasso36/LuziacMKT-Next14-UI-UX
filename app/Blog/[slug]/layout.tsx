@@ -14,7 +14,7 @@ interface PropsGet {
   
   export async function generateStaticParams() {
   
-    const request = (await fetch('/pages/api/blog')).json() 
+    const request = (await fetch('https://www.luziac.com.br/pages/api/blog')).json() 
     if(!request) return {}
     const posts = await request
     return posts.map((post: any) => ({
@@ -28,7 +28,7 @@ interface PropsGet {
   
   export async function generateMetadata({ params }: any): Promise<Metadata> { 
   
-    const slugMetadata = (await fetch('/pages/api/blog')).json() 
+    const slugMetadata = (await fetch('https://www.luziac.com.br/pages/api/blog')).json() 
     if(!slugMetadata) return {}
     const data = await slugMetadata
   

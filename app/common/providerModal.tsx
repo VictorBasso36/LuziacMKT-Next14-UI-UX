@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+"use client"
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 
@@ -21,11 +21,11 @@ export function OpenProvider({ children }: OpenProviderProps) {
     const search = searchParams.get('open') || ''
   
     const [open, setOpen] = useState<string>(search)
-    console.log(open);
 
     return (
         <OpenContext.Provider 
         value={{ open, setOpen }}
+        key={open} // Adicionando a chave aqui
         >
         {children}
         </OpenContext.Provider>

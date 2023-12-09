@@ -31,7 +31,7 @@ interface PropsGet {
   
   export async function generateMetadata({ params }: any): Promise<Metadata> { 
   
-    const slugMetadata = (await fetch('http://localhost:3000/posts.json')).json() 
+    const slugMetadata = (await fetch('https://www.luziac.com.br/posts.json')).json() 
     const data = await slugMetadata
   
     const slug = decodeURIComponent(params?.slug)

@@ -23,7 +23,7 @@ interface PropsGet {
 }
 
 async function getData(): Promise<PropsGet[]> {
-  const slugMetadata = await (await fetch('http://localhost:3000/posts.json')).json();
+  const slugMetadata = await (await fetch('https://www.luziac.com.br/posts.json')).json();
   const data: PropsGet[] = slugMetadata;
   return data;
 }

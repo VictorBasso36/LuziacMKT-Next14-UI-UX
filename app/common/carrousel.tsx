@@ -156,8 +156,8 @@ export default function Carrousel()   {
                 className={styles.swiperMain}
               >
                     <SwiperSlide key={0} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow2}>
+                      <div className={styles.MyImage}>
+                        <div className={styles.shadow}>
 
                         </div>
                         <div className={styles.content}>
@@ -178,8 +178,8 @@ export default function Carrousel()   {
                   
             
                   <SwiperSlide key={2} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                    <div className={styles.MyImage2}>
-                      <div className={styles.shadow2}>
+                    <div className={styles.MyImage}>
+                      <div className={styles.shadow}>
 
                       </div>
                       <div className={styles.content}>
@@ -189,8 +189,8 @@ export default function Carrousel()   {
                   
                   </SwiperSlide>
                   <SwiperSlide key={3} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                    <div className={styles.MyImage}>
-                      <div className={styles.shadow}>
+                    <div className={styles.MyImage2}>
+                      <div className={styles.shadow2}>
 
                       </div>
                       <div className={styles.content}>
@@ -211,8 +211,8 @@ export default function Carrousel()   {
                   
                   </SwiperSlide>
                   <SwiperSlide key={5} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                    <div className={styles.MyImage}>
-                      <div className={styles.shadow}>
+                    <div className={styles.MyImage2}>
+                      <div className={styles.shadow2}>
 
                       </div>
                       <div className={styles.content}>

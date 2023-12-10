@@ -96,7 +96,8 @@ export default function FormBlog({url, slug}: {url: string, slug: string}) {
                             onChange={handleChange} /> 
                   </label>
 
-                </form>                  
+                </form>  
+                                
                 <button className={styles.submitButton} onClick={handleSubmit}>
                   {!sucess ?<p>  <span>ENVIAR</span> (ESTOU PRONTO <br />
                   PARA POTENCIALIZAR  <br />

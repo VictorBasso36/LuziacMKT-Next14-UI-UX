@@ -41,6 +41,7 @@ interface PropsGet {
         index: true,
         follow: true,
       },
+      metadataBase: new URL('https://www.luziac.com.br/'),
       
       authors: [{
         name: 'Guilherme Luziac',

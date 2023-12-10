@@ -62,7 +62,11 @@
 }
 
 .whatsappButton:hover{
-    opacity: 0.8;
+    background-color: var(--suportColor);  
+}
+
+.whatsappButton:hover p{
+    color: white;
 }
 
 .whatsappButton p{
@@ -96,7 +100,11 @@
 }
 
 .emailButton:hover{
-    opacity: 0.8;
+    background-color: var(--suportColor);
+}
+
+.emailButton:hover p{
+    color: white;
 }
 
 .emailButton p{
@@ -218,7 +226,16 @@
 }
 
 .submitButton:hover{
-    opacity: 0.8;
+    background-color: var(--mainColor);
+}
+
+.submitButton:hover p{
+    color: var(--suportColor);
+    font-weight: bold;
+}
+
+.submitButton:hover p span{
+    color: white;
 }
 
 .submitButton p{

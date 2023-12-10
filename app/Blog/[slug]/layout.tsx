@@ -37,6 +37,18 @@ interface PropsGet {
     return {
       title: content?.slug ? `Artigo Imobiliário : ${content?.slug}` : 'Luziac Marketing Imobiliário',
       description: content?.description  ? content?.description : 'Luziac Marketing Imobiliário',
+      robots: {
+        index: true,
+      },
+      authors: [{
+        name: 'Guilherme Luziac',
+        url: 'https://www.linkedin.com/in/guilherme-carvalho-bispo/?originalSubdomain=br'
+      },
+      {
+        name: 'Victor Basso Dev',
+        url: 'www.linkedin.com/in/victor-basso-b3090a189'
+      }  
+      ],
       icons: {
         icon: '/faviicon.svg',
       },

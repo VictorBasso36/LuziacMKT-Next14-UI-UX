@@ -89,22 +89,27 @@
     background-color: transparent;
 }
 
-.mainButton:hover{
-    opacity: 0.8;
-
-}
-
 .clipbg{
     color: white;
     background-color: var(--mainColor);
     border: none;
     outline: none;
+    transition: all 500ms ease-in-out;
     padding: 40px;
     clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%)
 }
 
+
+.mainButton:hover .clipbg{
+    background-color: var(--suportColor);
+}
 .clipbg p{
     font-size: 19.3pt;
+}
+
+.mainButton:hover .clipbg p{
+    color: var(--mainColor);
+
 }
 
 

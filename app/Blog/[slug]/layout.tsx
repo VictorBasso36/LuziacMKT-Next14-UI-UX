@@ -39,7 +39,9 @@ interface PropsGet {
       description: content?.description  ? content?.description : 'Luziac Marketing Imobiliário',
       robots: {
         index: true,
+        follow: true,
       },
+      
       authors: [{
         name: 'Guilherme Luziac',
         url: 'https://www.linkedin.com/in/guilherme-carvalho-bispo/?originalSubdomain=br'

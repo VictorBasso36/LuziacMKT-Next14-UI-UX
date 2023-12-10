@@ -12,7 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     robots: {
       index: true,
+      follow: true,
     },
+    
     authors: [{
       name: 'Guilherme Luziac',
       url: 'https://www.linkedin.com/in/guilherme-carvalho-bispo/?originalSubdomain=br'

@@ -89,7 +89,12 @@
 }
 
 .MainButton:hover{
-    opacity: 0.8;
+    background-color: var(--suportColor);
+    
+}
+
+.MainButton:hover p{
+    color: var(--mainColor);
 }
 
 .MainButton p{

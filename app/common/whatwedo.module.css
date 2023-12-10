@@ -132,7 +132,11 @@
     margin-top: 30px;
 }
 .sendButton:hover{
-    opacity: 0.8;
+    background-color: var(--suportColor);
+}
+
+.sendButton:hover p{
+    color: var(--mainColor);
 }
 
 .sendButton p{

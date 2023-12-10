@@ -10,6 +10,18 @@ const epilogue = Epilogue({ subsets: ['latin-ext'], weight: ['100', '200', '300'
 export async function generateMetadata(): Promise<Metadata> { 
 
   return {
+    robots: {
+      index: true,
+    },
+    authors: [{
+      name: 'Guilherme Luziac',
+      url: 'https://www.linkedin.com/in/guilherme-carvalho-bispo/?originalSubdomain=br'
+    },
+    {
+      name: 'Victor Basso Dev',
+      url: 'www.linkedin.com/in/victor-basso-b3090a189'
+    }  
+    ],
     title: 'LUZIAC - Marketing Imobiliário, criando conexões.',
     description: 'Ajudando imobiliárias e incorporadoras a venderem mais com estratégias inteligentes.',
     keywords: ['marketing imobiliário', 'imobiliárias', 'incorporadoras', 'vendas estratégicas', 'sites imobiliários', 'marketing digital imobiliário', 'identidade visual', 'anúncios imobiliários', 'gestão imobiliária', 'captação imobiliária', 'edição imobiliária'],

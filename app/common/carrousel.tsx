@@ -156,12 +156,12 @@ export default function Carrousel()   {
                 className={styles.swiperMain}
               >
                     <SwiperSlide key={0} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow2}>
+                      <div className={styles.MyImage}>
+                        <div className={styles.shadow}>
 
                         </div>
                         <div className={styles.content}>
-                          <Image src="/granvellas.svg" width={200} height={200} alt={''}></Image>
+                          <Image src="/granvellas.svg" width={200} height={200} alt={'Cliente da Luziac Marketing : Gran Vellas'}></Image>
                         </div>
                       </div>
                     </SwiperSlide>
@@ -171,30 +171,30 @@ export default function Carrousel()   {
 
                         </div>
                         <div className={styles.content}>
-                          <Image src="/connect.png" width={200} height={200} alt={''}></Image>
+                          <Image src="/connect.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Connect Penha'}></Image>
                         </div>
                       </div>                 
                     </SwiperSlide>
                   
             
                   <SwiperSlide key={2} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                    <div className={styles.MyImage2}>
-                      <div className={styles.shadow2}>
-
-                      </div>
-                      <div className={styles.content}>
-                        <Image src="/unita.png" width={200} height={200} alt={''}></Image>
-                      </div>
-                    </div>
-                  
-                  </SwiperSlide>
-                  <SwiperSlide key={3} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
                     <div className={styles.MyImage}>
                       <div className={styles.shadow}>
 
                       </div>
                       <div className={styles.content}>
-                        <Image src="/lacoslogo.png" width={200} height={200} alt={''}></Image>
+                        <Image src="/unita.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Unitá'}></Image>
+                      </div>
+                    </div>
+                  
+                  </SwiperSlide>
+                  <SwiperSlide key={3} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
+                    <div className={styles.MyImage2}>
+                      <div className={styles.shadow2}>
+
+                      </div>
+                      <div className={styles.content}>
+                        <Image src="/lacoslogo.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Laços Vila Guilhermina'}></Image>
                       </div>
                     </div>
                   
@@ -205,18 +205,18 @@ export default function Carrousel()   {
 
                       </div>
                       <div className={styles.content}>
-                        <Image src="/reallife.png" width={200} height={200} alt={''}></Image>
+                        <Image src="/reallife.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Real Life Imobiliária'}></Image>
                       </div>
                     </div>
                   
                   </SwiperSlide>
                   <SwiperSlide key={5} className={styles.Slide} onClick={() => setMenuPortfolio(!mainMenuPortfolio)}>
-                    <div className={styles.MyImage}>
-                      <div className={styles.shadow}>
+                    <div className={styles.MyImage2}>
+                      <div className={styles.shadow2}>
 
                       </div>
                       <div className={styles.content}>
-                        <Image src="/casavelogo.svg" width={200} height={200} alt={''}></Image>
+                        <Image src="/casavelogo.svg" width={200} height={200} alt={'Cliente da Luziac Marketing : Casave'}></Image>
                       </div>
                     </div>
                   
@@ -227,7 +227,7 @@ export default function Carrousel()   {
 
                       </div>
                       <div className={styles.content}>
-                        <Image src="/fd.png" width={200} height={200} alt={''}></Image>
+                        <Image src="/fd.png" width={200} height={200} alt={'Cliente da Luziac Marketing : F&d'}></Image>
                       </div>
                     </div>
                   

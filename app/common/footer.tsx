@@ -100,24 +100,24 @@ export default function Footer()   {
                 <form onSubmit={handleSubmit} className={styles.FormMain} action="">
                   <label htmlFor="Name">
                     <p>Como você <span>gostaria de ser chamado?</span></p>
-                    <input type="text" name='Name' value={formData.Name} onChange={handleChange}  />
+                    <input type="text" name='Name' value={formData.Name}  required={true} onChange={handleChange}  />
                   
                   </label>
                   <label htmlFor="Company">
                     <p>Qual o nome da <span>sua empresa?</span></p>
-                    <input type="text" name='Company' value={formData.Company} onChange={handleChange} />
+                    <input type="text" name='Company' value={formData.Company}  required={true}  onChange={handleChange} />
                   </label>
                   <label htmlFor="Acting">
                     <p>Qual seu <span>tipo de atuação?</span></p>
-                    <input type="text" name='Acting' value={formData.Acting} onChange={handleChange} />   
+                    <input type="text" name='Acting' value={formData.Acting}  required={true}  onChange={handleChange} />   
                   </label>
                   <label htmlFor="Tel">
                     <p>Seu <span>zap</span> ou <span>telefone</span>:</p>
-                    <input type="tel" name="Tel" value={formData.Tel} onChange={handleChange}/>
+                    <input type="tel" name="Tel" value={formData.Tel}  required={true}  onChange={handleChange}/>
                   </label>
                   <label htmlFor="Email">
                     <p>E por último, <span>seu melhor e-mail:</span></p>
-                    <input type="email" name="Email" value={formData.Email}
+                    <input type="email" name="Email"  required={true}  value={formData.Email}
                             onChange={handleChange} /> 
                   </label>
 

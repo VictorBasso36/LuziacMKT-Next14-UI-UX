@@ -147,6 +147,7 @@ export default function Carrousel()   {
                 slidesPerView='auto'
                 centeredSlides={true}
                 loop={false}
+                initialSlide={4}
                 grabCursor={true}
                 modules={[Autoplay, Virtual, Pagination]}
                 pagination={pagination}

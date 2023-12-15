@@ -42,14 +42,14 @@ export default function RootLayout({
     
     <html lang="pt-br">
         <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-TS6PB2TC"></script>
-        <script>
-          {
-            `window.dataLayer = window.dataLayer || [];
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GTM-TS6PB2TC');`
-          }
-          </script>
+            gtag('config', 'GTM-TS6PB2TC');
+          `
+        }} />
         <meta name="robots" content="index, follow"></meta>
         <meta name="revisit-after" content="5 days"></meta>
         <meta name="author" content="Guilherme Luziac, Victor Basso Dev, LUZIAC - CRIANDO CONEXÕES"></meta>

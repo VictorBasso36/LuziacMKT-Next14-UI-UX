@@ -88,7 +88,7 @@ export default function WhatWedo()   {
                   </div>
                 </div>
                 <div className={styles.MainCardLast}>
-                  <h4>QUER CONHECER <br /> AS <span>MELHORES <br /> SOLUÇÕES?</span> PARA <br /> SEU NEGÓCIO </h4>
+                  <h4>QUER CONHECER <br /> AS <span>MELHORES <br /> SOLUÇÕES</span> PARA <br /> SEU NEGÓCIO ?</h4>
                   <Image className={styles.arrow} src="/8.svg" width={80} height={80} alt="Contato"></Image>
                   <div className={styles.sendButton} onClick={() => setOpen('whatsapp')}>
                     <p>CHEGA <span>MAIS!</span></p>

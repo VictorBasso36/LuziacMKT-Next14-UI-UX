@@ -41,17 +41,29 @@ export default function RootLayout({
   return (
     
     <html lang="pt-br">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-TS6PB2TC"></script>
+        <script>
+          {
+            `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GTM-TS6PB2TC');`
+          }
+          </script>
         <meta name="robots" content="index, follow"></meta>
         <meta name="revisit-after" content="5 days"></meta>
         <meta name="author" content="Guilherme Luziac, Victor Basso Dev, LUZIAC - CRIANDO CONEXÕES"></meta>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1" />
         <meta name="language" content="pt-br"></meta> 
       <body className={epilogue.className}>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TS6PB2TC"
+      height="0" width="0" style={{display:"none", visibility:"hidden"}}></iframe></noscript>
         <ParallaxProvider key={0}>
           <OpenProvider key={0}>
             {children}
           </OpenProvider>
         </ParallaxProvider>
+        
         </body>
     </html>
   )

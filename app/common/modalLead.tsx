@@ -53,21 +53,35 @@ export default function ModalLead() {
         if (response.ok) {
           const responseData = await response.json();
           setSucess(true)
-       
-          window.location.href = 'https://wa.me/5511992070343?text=Oii!%20Vi%20o%20site%20da%20Luziac%20e%20quero%20potencializar%20minhas%20vendas%20com%20Marketing%20Imobili%C3%A1rio,%20pode%20me%20ajudar?%22';
-          
+          console.log(responseData)
+          window.open('https://wa.me/5511992070343?text=Oii!%20Vi%20o%20site%20da%20Luziac%20e%20quero%20potencializar%20minhas%20vendas%20com%20Marketing%20Imobili%C3%A1rio,%20pode%20me%20ajudar?%22', '_blank');
+
         } else {
           console.error('Erro na solicitação:', response.status, response.statusText);
-          // Lide com o erro conforme necessário
+
         }
       } catch (error) {
         console.error('Erro na solicitação:', error);
-        // Lide com o erro conforme necessário
+
       }
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
+      const phoneMask = (value: string) => {
+        return value
+          .replace(/\D/g, '')
+          .replace(/^(\d{2})(\d)/g, '($1) $2')
+          .replace(/(\d)(\d{4})$/, '$1-$2')
+          .slice(0, 20);
+      }
+    
+
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let { name, value } = e.target;
+      
+        if (name === 'Tel') {
+          value = phoneMask(value);
+        }
+      
         setFormData((prevData) => ({
           ...prevData,
           [name]: value,
@@ -76,6 +90,10 @@ export default function ModalLead() {
       if (!render) {
         return null;
       }
+
+      
+
+
     return (
     <>  
         <section className={styles.main}>
@@ -95,7 +113,7 @@ export default function ModalLead() {
                         </label>
                         <label htmlFor="Tel">
                             <p>Seu zap ou telefone:</p>
-                            <input type="tel" required={true}  name='Tel' 
+                            <input type="tel" required={true} name='Tel' 
                             value={formData.Tel}
                             onChange={handleChange} />
                         </label>

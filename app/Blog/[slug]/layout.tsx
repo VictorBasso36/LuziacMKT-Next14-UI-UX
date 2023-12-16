@@ -38,10 +38,6 @@ interface PropsGet {
     return {
       title: content?.slug ? `Artigo Imobiliário : ${content?.slug}` : 'Luziac Marketing Imobiliário',
       description: content?.description  ? content?.description : 'Luziac Marketing Imobiliário',
-      robots: {
-        index: true,
-        follow: true,
-      },
       metadataBase: new URL('https://www.luziac.com.br/'),
       
       authors: [{

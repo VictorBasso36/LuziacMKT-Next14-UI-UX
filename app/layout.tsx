@@ -11,10 +11,6 @@ const epilogue = Epilogue({ subsets: ['latin-ext'], weight: ['100', '200', '300'
 export async function generateMetadata(): Promise<Metadata> { 
 
   return {
-    robots: {
-      index: true,
-      follow: true,
-    },
     
     authors: [{
       name: 'Guilherme Luziac',
@@ -63,7 +59,6 @@ export default function RootLayout({
   `,
         }}
       />
-        <meta name="robots" content="index, follow"></meta>
         <meta name="revisit-after" content="5 days"></meta>
         <meta name="author" content="Guilherme Luziac, Victor Basso Dev, LUZIAC - CRIANDO CONEXÕES"></meta>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1" />

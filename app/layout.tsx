@@ -27,6 +27,10 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: '/faviicon.svg',
     },
+    robots: {
+      index: true,
+      googleBot: 'index, follow',
+    }
   }
 }
 
@@ -59,6 +63,7 @@ export default function RootLayout({
   `,
         }}
       />
+        <meta name="robots" content="index, follow"></meta>
         <meta name="revisit-after" content="5 days"></meta>
         <meta name="author" content="Guilherme Luziac, Victor Basso Dev, LUZIAC - CRIANDO CONEXÕES"></meta>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1" />

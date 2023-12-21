@@ -34,6 +34,40 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
+import { MetadataRoute } from 'next'
+ 
+export function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: 'https://www.luziac.com.br/',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: 'https://www.luziac.com.br/Blog/Como%20a%20Realidade%20Virtual%20Impacta%20na%20Venda%20de%20Im%C3%B3veis%20na%20Planta.',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.luziac.com.br/Blog/Como%20as%20fotos%20dos%20seus%20im%C3%B3veis%20impactam%20no%20engajamento%20das%20suas%20redes.https://www.luziac.com.br/Blog/Como%20as%20fotos%20dos%20seus%20im%C3%B3veis%20impactam%20no%20engajamento%20das%20suas%20redes.',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+
+    {
+      url: 'https://www.luziac.com.br/Blog/Como%20a%20Queda%20da%20Taxa%20Selic%20Interfere%20nas%20Suas%20Vendas%20de%20Im%C3%B3veis',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+  ]
+}
+
+sitemap()
+
 export default function RootLayout({
   children,
 }: {

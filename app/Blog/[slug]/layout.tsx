@@ -36,8 +36,8 @@ interface PropsGet {
     const slug = decodeURIComponent(params?.slug)
     const content = data.find((objeto: any) => objeto.slug === slug.toString());
     return {
-      title: content?.slug ? `Artigo Imobiliário : ${content?.slug}` : 'Luziac Marketing Imobiliário',
-      description: content?.description  ? content?.description : 'Luziac Marketing Imobiliário',
+      title: content?.slug ? `Artigo Imobiliário : ${content?.slug}` : 'Luziac - Marketing Imobiliário',
+      description: content?.description  ? content?.description : 'Luziac - Marketing Imobiliário',
       metadataBase: new URL('https://www.luziac.com.br/'),
       robots: {
         index: true,

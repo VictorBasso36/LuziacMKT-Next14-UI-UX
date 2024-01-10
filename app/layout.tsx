@@ -21,9 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
       url: 'www.linkedin.com/in/victor-basso-b3090a189'
     }  
     ],
-    title: 'LUZIAC - Marketing Imobiliário, criando conexões.',
+    title: 'LUZIAC - Marketing Imobiliário, criando conexões | Luziac, criando conexões.',
     description: 'Ajudando imobiliárias e incorporadoras a venderem mais com estratégias inteligentes.',
-    keywords: ['marketing imobiliário', 'imobiliárias', 'incorporadoras', 'vendas estratégicas', 'sites imobiliários', 'marketing digital imobiliário', 'identidade visual', 'anúncios imobiliários', 'gestão imobiliária', 'captação imobiliária', 'edição imobiliária'],
+    keywords: ['marketing imobiliário', 'imobiliárias', 'incorporadoras', 'vendas estratégicas', 'sites imobiliários', 'marketing digital imobiliário', 'identidade visual', 'anúncios imobiliários', 'gestão imobiliária', 'captação imobiliária', 'edição imobiliária', 'sites para imobiliárias'],
     icons: {
       icon: '/faviicon.svg',
     },

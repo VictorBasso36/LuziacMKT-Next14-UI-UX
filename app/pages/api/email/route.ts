@@ -33,7 +33,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         const mailOption = {
             from: 'Guilherme@luziac.com.br',
             to: 'Guilherme@luziac.com.br,',
-            subject: `Contato via site - ${items?.name ||items?.data?.name } da ${items?.data?.company || items?.data?.acting || items?.acting } `,
+            subject: `Lead Novo - Site Luziac - ${items?.name ||items?.data?.name } da ${items?.data?.company || items?.data?.acting || items?.acting } `,
             html: `
         <h3>Contato via site</h3>
         <li> Nome: ${items?.data?.name || items?.name}</li>

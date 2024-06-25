@@ -157,7 +157,7 @@ export default function Carrousel()   {
                 grabCursor={true}
                 modules={[Autoplay, Virtual, Pagination]}
                 pagination={pagination}
-                onSlideChange={(swiper) => setGoIndex(swiper.activeIndex)}
+                // onSlideChange={(swiper) => setGoIndex(swiper.activeIndex)}
                 slideToClickedSlide={true}
                 autoplay={true}
                 className={styles.swiperMain}

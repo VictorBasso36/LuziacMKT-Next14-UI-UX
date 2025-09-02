@@ -1,11 +1,12 @@
-"use client"
-import Image from 'next/image'
-import styles from './navbar.module.css'
-import Link from 'next/link'
-import { MouseEventHandler, useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+"use client";
+import Image from "next/image";
+import styles from "./navbar.module.css";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
 export default function Navbar() {
-const pathname = usePathname()
+  const pathname = usePathname();
   const [menu, setMenu] = useState(false);
   useEffect(() => {
     if (menu) {
@@ -15,8 +16,8 @@ const pathname = usePathname()
     }
   }, [menu]);
 
-
   const [larguraDaJanela, setLarguraDaJanela] = useState<number>(0);
+  const [scrollY, setScrollY] = useState<number>(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,112 +28,144 @@ const pathname = usePathname()
     handleResize();
 
     // Adiciona um ouvinte de redimensionamento para atualizar a largura da janela quando ela muda
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Remove o ouvinte de redimensionamento quando o componente é desmontado
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const isDesktop = larguraDaJanela > 1280;
+  const isMobile = larguraDaJanela <= 1280;
+
+  // Show list menu only when: scroll < 10 AND desktop
+  const shouldShowListMenu = scrollY < 10 && isDesktop;
+
+  // Show hamburger menu when: (scroll < 10 AND mobile) OR (scroll > 10 AND any size)
+  const shouldShowHamburger = (scrollY < 10 && isMobile) || scrollY >= 10;
+
   return (
     <>
-    { menu && 
+      {menu && (
         <div className={styles.mainMenuHere} onClick={() => setMenu(!menu)}>
-            <div className={styles.ModalHere}>
+          <div className={styles.ModalHere}>
             <ul className={styles.mainListNavBar}>
-                <li className={styles.mainImageCommon}>
+              <li className={styles.mainImageCommon}>
                 <Link href="/#DIFERENCIAIS">
-                    <p>DIFERENCIAIS</p>
+                  <p>DIFERENCIAIS</p>
                 </Link>
-                </li>
-                <li className={styles.mainImageCommon}>
+              </li>
+              <li className={styles.mainImageCommon}>
                 <Link href="/#CASES">
-                    <p>CASES</p>
+                  <p>CASES</p>
                 </Link>
-                </li>
-                {pathname === '/' ?
-                    <li className={styles.mainImageCommon}>
-                    <Link href={"/#SOBRE"}>
-                        <p>O QUE FAZEMOS?</p>
-                    </Link>
-                    </li>
-                :
-                    <></>    
-                }
+              </li>
+              {pathname === "/" ? (
                 <li className={styles.mainImageCommon}>
+                  <Link href={"/#SOBRE"}>
+                    <p>O QUE FAZEMOS?</p>
+                  </Link>
+                </li>
+              ) : (
+                <></>
+              )}
+              <li className={styles.mainImageCommon}>
                 <Link href="/#BLOG">
-                    <p>BLOG</p>
+                  <p>BLOG</p>
                 </Link>
-                </li>
-                <li className={styles.mainImageCommon}>
+              </li>
+              <li className={styles.mainImageCommon}>
                 <Link href="/#CONTATO">
-                    <p>CONTATO</p>
+                  <p>CONTATO</p>
                 </Link>
-                </li>
+              </li>
             </ul>
+          </div>
         </div>
-      </div>
-    }
-    <nav className={styles.main}>
+      )}
+      <nav className={styles.main}>
         <div className={styles.container}>
-            {larguraDaJanela > 550
-            ?
+          {larguraDaJanela > 550 ? (
             <Link href="/">
-                <Image src="/mainLogo.png" alt='Luziac - Criando Conexões - Logo' width={320} height={60}>
-
-                </Image>
+              <Image
+                src="/mainLogo.png"
+                alt="Luziac - Criando Conexões - Logo"
+                width={320}
+                height={60}
+              ></Image>
             </Link>
-            :
+          ) : (
             <Link href="/">
-            <Image src="/faviicon.svg" alt='Luziac - Criando Conexões - Logo' width={60} height={60}>
-
-            </Image>
-        </Link>
-            }
+              <Image
+                src="/faviicon.svg"
+                alt="Luziac - Criando Conexões - Logo"
+                width={60}
+                height={60}
+              ></Image>
+            </Link>
+          )}
+          {shouldShowListMenu && (
             <ul>
+              <li>
+                <Link href="#DIFERENCIAIS">
+                  <p>DIFERENCIAIS</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="#CASES">
+                  <p>CASES</p>
+                </Link>
+              </li>
+              {pathname === "/" ? (
                 <li>
-                    <Link href="#DIFERENCIAIS" >
-                       <p>DIFERENCIAIS</p> 
-                    </Link>
+                  <Link href="#SOBRE">
+                    <p>O QUE FAZEMOS?</p>
+                  </Link>
                 </li>
-                <li>
-                    <Link href="#CASES">
-                        <p>CASES</p>
-                    </Link>
-                </li>
-                {pathname === '/' ?
-                    <li>
-                        <Link href="#SOBRE">
-                            <p>O QUE FAZEMOS?</p>
-                        </Link>
-                    </li>
-                    :
-                    <></>
-                }
-                <li>
-                    <Link href="#BLOG">
-                        <p>BLOG</p>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="#CONTATO">
-                        <p>CONTATO</p>    
-                    </Link>
-                </li>
+              ) : (
+                <></>
+              )}
+              <li>
+                <Link href="#BLOG">
+                  <p>BLOG</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="#CONTATO">
+                  <p>CONTATO</p>
+                </Link>
+              </li>
             </ul>
+          )}
+          {shouldShowHamburger && (
             <div className={`${styles.hambmenu}`}>
-                <div 
-                className={`${styles.hambmenuContainer} ${menu ? styles.menuExistis : ''}`} 
+              <div
+                className={`${styles.hambmenuContainer} ${
+                  menu ? styles.menuExistis : ""
+                }`}
                 onClick={() => setMenu(!menu)}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
+          )}
         </div>
-    </nav>
+      </nav>
     </>
-  )
+  );
 }

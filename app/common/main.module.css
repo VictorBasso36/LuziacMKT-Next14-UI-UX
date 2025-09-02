@@ -22,9 +22,13 @@
 .mainTitle{
     color: white;
     font-weight: bold;
-    font-size: 85pt;
+    font-size: 45pt;
     z-index: 3;
     font-family: var(--Epilogue);
+}
+
+.mainTitle span{
+    text-decoration: underline var(--mainColor);
 }
 
 .mainTitle strong{
@@ -51,7 +55,7 @@
 .content{
     z-index: 2;
     width: 100%;
-
+    
 }
 
 
@@ -112,6 +116,30 @@
 
 }
 
+@media screen and (min-width: 1024px) and (max-width:1324px){
+    .handsParallax{
+        height: 600px;
+        z-index: 1;
+        width: 600px;
+        position: absolute;
+        top: 0;
+        right: -50px;
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) and (max-width:1124px){
+    .handsParallax{
+        height: 600px;
+        z-index: 1;
+        width: 500px;
+        position: absolute;
+        top: 0;
+        right: -100px;
+    }
+
+}
 
 
 @media screen and (min-width: 850px) and (max-width:1024px){
@@ -120,7 +148,7 @@
         width: 350px;
         position: absolute;
         top: 0;
-        margin-right: -30px;
+        margin-right: -100px;
         right: 0;
         transform: rotate(50deg);
         
@@ -151,7 +179,7 @@
     .mainTitle{
         color: white;
         font-weight: bold;
-        font-size: 65pt;
+        font-size: 35pt;
         z-index: 3;
         font-family: var(--Epilogue);
     }
@@ -160,7 +188,7 @@
         width: 250px;
         position: absolute;
         top: 0;
-        margin-right: -30px;
+        margin-right: -120px;
         right: 0;
         transform: rotate(50deg);
         
@@ -216,7 +244,7 @@
     .mainTitle{
         color: white;
         font-weight: bold;
-        font-size: 3.2rem;
+        font-size: 1.4rem;
         z-index: 3;
         text-align: center;
         font-family: var(--Epilogue);
@@ -225,7 +253,7 @@
         height:250px;
         width: 250px;
         position: absolute;
-        top: 0;
+        top: -15vw;
         margin-right: unset;
         margin-left: -50vw;
         right: unset;
@@ -258,7 +286,7 @@
         text-align: center;
         justify-content: center;
         color: white;
-        font-size: 19.3pt!important;
+        font-size: 14.3pt!important;
     }
 
     .mainButton{

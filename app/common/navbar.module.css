@@ -196,9 +196,9 @@
 
 
 @media screen and (min-width: 1280px) {
-    .hambmenu{
+    /* .hambmenu{
         display: none;
-    }  
+    }   */
     
     .container ul{
         display: flex;

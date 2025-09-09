@@ -89,7 +89,7 @@ export default function Diff() {
               </h2>
             </div>
             <p className={styles.diagonalDiv2text}>
-              Estratégias exclusivas para o <span>Real State</span>, <br />{" "}
+              Estratégias exclusivas para o <span>Real State</span>, <br /> e
               análises constantes do setor e uma metodologia assertiva para
               maximizar para resultados em vendas.
             </p>

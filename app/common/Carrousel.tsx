@@ -1,59 +1,62 @@
-"use client"
-import Link from 'next/link'
-import styles from './carrousel.module.css'
-import Image from 'next/image'
-import { Parallax } from 'react-scroll-parallax'
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
+import Link from "next/link";
+import styles from "./carrousel.module.css";
+import Image from "next/image";
+import { Parallax } from "react-scroll-parallax";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import { Autoplay, Pagination, Virtual } from 'swiper/modules';
-import { useEffect, useState } from 'react'
-import { useOpen } from './providerModal'
+import "swiper/css";
+import { Autoplay, Pagination, Virtual } from "swiper/modules";
+import { useEffect, useState } from "react";
+import { useOpen } from "./providerModal";
 
-
-
-
-
-export default function Carrousel()   {
+export default function Carrousel() {
   const projetosImobiliarios = [
     {
-      titulo: 'Gran Vellas',
-      descricao: 'Para este lançamento de lotes nós cuidamos de tudo: Site, redes sociais, criamos um tour de realidade virtual e gerenciamos as campanhas de tráfego.',
-      fotos: ['/granvellas1.png']
+      titulo: "Gran Vellas",
+      descricao:
+        "Para este lançamento de lotes nós cuidamos de tudo: Site, redes sociais, criamos um tour de realidade virtual e gerenciamos as campanhas de tráfego.",
+      fotos: ["/granvellas1.png"],
     },
     {
-      titulo: 'Connect Penha',
-      descricao: 'Desde logo até a entrega dos Leads fresquinhos. Para este projeto, pensamos em uma tipologia e identidade visual que enfatize sua proximidade ao metrô penha: Conectar você, ao melhor de São Paulo.',
-      fotos: ['/connect1.png']
+      titulo: "Connect Penha",
+      descricao:
+        "Desde logo até a entrega dos Leads fresquinhos. Para este projeto, pensamos em uma tipologia e identidade visual que enfatize sua proximidade ao metrô penha: Conectar você, ao melhor de São Paulo.",
+      fotos: ["/connect1.png"],
     },
     {
-      titulo: 'Unità Penha',
-      descricao: 'Aqui cada detalhe foi pensado cuidadosamente para atrair e conectar os clientes deste lançamento: Desde logotipo, site e redes sociais até campanhas de tráfego pago para Google e Meta Ads.',
-      fotos: ['/unita1.jpg','/unita2.png']
+      titulo: "Unità Penha",
+      descricao:
+        "Aqui cada detalhe foi pensado cuidadosamente para atrair e conectar os clientes deste lançamento: Desde logotipo, site e redes sociais até campanhas de tráfego pago para Google e Meta Ads.",
+      fotos: ["/unita1.jpg", "/unita2.png"],
     },
     {
-      titulo: 'Laços Vila Guilhermina',
-      descricao: 'Laços é um projeto que encanta pela conexão e empatia. Com uma tipografia aconchegante e despojada, a ideia foi aproximar famílias em ascensão para o coração da Zona Leste.',
-      fotos: ['/lacos1.png','/lacos2.png']
+      titulo: "Laços Vila Guilhermina",
+      descricao:
+        "Laços é um projeto que encanta pela conexão e empatia. Com uma tipografia aconchegante e despojada, a ideia foi aproximar famílias em ascensão para o coração da Zona Leste.",
+      fotos: ["/lacos1.png", "/lacos2.png"],
     },
     {
-      titulo: 'Real Life',
-      descricao: 'A imobiliária Real Life tinha dificuldade em ser vista e conhecida pelos seus clientes. Hoje, através de nossas estratégias, apostamos numa identidade visual bem estabelecida, reels humanizados e campanhas de reconhecimento.',
-      fotos: ['/reallife1.png','/reallife2.png','/reallife3.png']
+      titulo: "Real Life",
+      descricao:
+        "A imobiliária Real Life tinha dificuldade em ser vista e conhecida pelos seus clientes. Hoje, através de nossas estratégias, apostamos numa identidade visual bem estabelecida, reels humanizados e campanhas de reconhecimento.",
+      fotos: ["/reallife1.png", "/reallife2.png", "/reallife3.png"],
     },
     {
-      titulo: 'CASAVE',
-      descricao: 'Uma imobiliária consolidada, mas que possuía pouca visibilidade nos canais digitais. Hoje, investe em tráfego pago de forma inteligente e cria conteúdos com objetivo de engajar e expandir o conhecimento da imobiliária de forma orgânica.',
-      fotos: ['/casave1.png','/casave2.png','/casave3.png']
+      titulo: "CASAVE",
+      descricao:
+        "Uma imobiliária consolidada, mas que possuía pouca visibilidade nos canais digitais. Hoje, investe em tráfego pago de forma inteligente e cria conteúdos com objetivo de engajar e expandir o conhecimento da imobiliária de forma orgânica.",
+      fotos: ["/casave1.png", "/casave2.png", "/casave3.png"],
     },
     {
-      titulo: 'F&D',
-      descricao: 'Hoje grande parte dos Leads da imobiliária F&D vem das estratégias de marketing digital da Luziac, desde campanhas pagas até conteúdos que engajam e alcançam potenciais clientes de forma orgânica.',
-      fotos: ['/fd1.png','/fd2.png','/fd3.png']
-    }
+      titulo: "F&D",
+      descricao:
+        "Hoje grande parte dos Leads da imobiliária F&D vem das estratégias de marketing digital da Luziac, desde campanhas pagas até conteúdos que engajam e alcançam potenciais clientes de forma orgânica.",
+      fotos: ["/fd1.png", "/fd2.png", "/fd3.png"],
+    },
   ];
-  const [mainMenuPortfolio, setMenuPortfolio] = useState(false)
+  const [mainMenuPortfolio, setMenuPortfolio] = useState(false);
   useEffect(() => {
     if (mainMenuPortfolio) {
       document.documentElement.style.overflow = "hidden";
@@ -63,29 +66,32 @@ export default function Carrousel()   {
   }, [mainMenuPortfolio]);
 
   const [goIndex, setGoIndex] = useState(0);
-  const [photosModal, setPhotosModal] = useState([''])
-  console.log(goIndex)
+  const [photosModal, setPhotosModal] = useState([""]);
+  console.log(goIndex);
   useEffect(() => {
     if (goIndex >= 0 && goIndex < projetosImobiliarios.length) {
       const fotosDoProjeto = projetosImobiliarios[goIndex].fotos;
       setPhotosModal(fotosDoProjeto);
-    } 
-  }, [goIndex])
+    }
+  }, [goIndex]);
 
   const fotosSwiperSlides = photosModal.map((foto, index) => (
     <SwiperSlide key={index} className={styles.SlideMain}>
-      <Image src={`${foto}`} width={420} height={420} alt='Foto do portfolio da Luziac Marketing Imobiliário'>
-
-      </Image>
+      <Image
+        src={`${foto}`}
+        width={420}
+        height={420}
+        alt="Foto do portfolio da Luziac Marketing Imobiliário"
+      ></Image>
     </SwiperSlide>
   ));
 
-  const { open, setOpen } = useOpen()
+  const { open, setOpen } = useOpen();
 
   const pagination = {
     clickable: true,
-    renderBullet: function (index: any, className:string) {
-      return '<span class="' + className + '">' + '</span>';
+    renderBullet: function (index: any, className: string) {
+      return '<span class="' + className + '">' + "</span>";
     },
   };
 
@@ -97,8 +103,8 @@ export default function Carrousel()   {
 
   return (
     <>
-        <div className={styles.main}>
-            {/* {mainMenuPortfolio &&
+      <div className={styles.main}>
+        {/* {mainMenuPortfolio &&
               <div className={styles.containerModal}>
                 <div className={styles.Modal}>
                     <p className={styles.Close} onClick={() => setMenuPortfolio(false)}>X</p>
@@ -136,177 +142,382 @@ export default function Carrousel()   {
                 </div>
               </div>
             } */}
-            <Parallax className={styles.itemParallaxWhite} speed={-5} startScroll={15} >
-              <Image  src={"/whiteParrallax.svg"} width={85} height={85} alt="Imagem clientes satisfeitos - Luziac" />     
-            </Parallax>
-            <Parallax speed={15} className={styles.itemParallaxBlack}>
-              <Image  src={"/blackParallax.svg"} width={85} height={85} alt="Imagem clientes satisfeitos - Luziac" />
-            </Parallax>
-            <section className={styles.container}>
-                <h3>EMPRESAS QUE SE <br />
-                <span>CONECTAM<Image className={styles.blogTitleDetail} src="/squashWhite.svg" width={400} height={20} alt="Blog Luziac - Artigos Imobiliarios"></Image></span> COM OS CLIENTES:</h3>
-                {/* <p>*<span>Clique</span>* e acesse o case completo !</p> */}
-            </section>
-            <div className={styles.swiperHere}>
-            <Swiper
-                spaceBetween={30}
-                slidesPerView='auto'
-                centeredSlides={true}
-                loop={true}
-                initialSlide={4}
-                grabCursor={true}
-                modules={[Autoplay, Virtual, Pagination]}
-                pagination={pagination}
-                // onSlideChange={(swiper) => setGoIndex(swiper.activeIndex)}
-                slideToClickedSlide={true}
-                autoplay={true}
-                className={styles.swiperMain}
-              >
+        <Parallax
+          className={styles.itemParallaxWhite}
+          speed={-5}
+          startScroll={15}
+        >
+          <Image
+            src={"/whiteParrallax.svg"}
+            width={85}
+            height={85}
+            alt="Imagem clientes satisfeitos - Luziac"
+          />
+        </Parallax>
+        <Parallax speed={15} className={styles.itemParallaxBlack}>
+          <Image
+            src={"/blackParallax.svg"}
+            width={85}
+            height={85}
+            alt="Imagem clientes satisfeitos - Luziac"
+          />
+        </Parallax>
+        <section className={styles.container}>
+          <h3>
+            EMPRESAS QUE SE <br />
+            <span>
+              CONECTAM
+              <Image
+                className={styles.blogTitleDetail}
+                src="/squashWhite.svg"
+                width={400}
+                height={20}
+                alt="Blog Luziac - Artigos Imobiliarios"
+              ></Image>
+            </span>{" "}
+            COM OS CLIENTES:
+          </h3>
+          {/* <p>*<span>Clique</span>* e acesse o case completo !</p> */}
+        </section>
+        <div className={styles.swiperHere}>
+          <Swiper
+            spaceBetween={30}
+            slidesPerView="auto"
+            centeredSlides={true}
+            loop={true}
+            initialSlide={16}
+            grabCursor={true}
+            modules={[Autoplay, Virtual, Pagination]}
+            pagination={pagination}
+            // onSlideChange={(swiper) => setGoIndex(swiper.activeIndex)}
+            slideToClickedSlide={true}
+            autoplay={true}
+            className={styles.swiperMain}
+          >
+            <SwiperSlide key={0} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/connect.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={0} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow2}>
+            <SwiperSlide key={1} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/reallife.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Real Life Imobiliária"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/connect.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Connect Penha'}></Image>
-                        </div>
-                      </div>                 
-                    </SwiperSlide>
+            <SwiperSlide key={2} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/LOGO.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Patrão Imoveis"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={1} className={styles.Slide}>
-                      <div className={styles.MyImage}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={3} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Logo v2 3.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Gemini"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/reallife.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Real Life Imobiliária'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+            <SwiperSlide key={5} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Logo Creci PNG.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Bartozzi"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={2} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={6} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/fd.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : F&d"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/LOGO.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Patrão Imoveis'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+            <SwiperSlide key={7} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/inferior_logo.jpg"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Villasul"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={3} className={styles.Slide}>
-                      <div className={styles.MyImage}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={8} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/unita.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Unitá"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/Logo v2 3.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Gemini'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+            <SwiperSlide key={9} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Logo VizoneSouza Horizontal.svg"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : VizoneSouza"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={4} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={10} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/casavelogo.svg"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Casave"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/Prancheta 1 cópia.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Lopes'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+            <SwiperSlide key={11} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/granvellas.svg"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Gran Vellas"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={5} className={styles.Slide}>
-                      <div className={styles.MyImage}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={12} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/lacoslogo.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Laços Vila Guilhermina"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/Logo Creci PNG.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Bartozzi'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+            <SwiperSlide key={13} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Acqua.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={6} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={14} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Bartozzi Imóveis-.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Laços Vila Guilhermina"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/fd.png" width={200} height={200} alt={'Cliente da Luziac Marketing : F&d'}></Image>
-                        </div>
-                      </div>                
-                    </SwiperSlide>
+            <SwiperSlide key={13} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Disk.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={7} className={styles.Slide}>
-                      <div className={styles.MyImage}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={14} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/FD.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Laços Vila Guilhermina"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/inferior_logo.jpg" width={200} height={200} alt={'Cliente da Luziac Marketing : Villasul'}></Image>
-                        </div>
-                      </div>                
-                    </SwiperSlide>
+            <SwiperSlide key={15} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Lopes.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={8} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={16} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Patrão.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Laços Vila Guilhermina"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/unita.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Unitá'}></Image>
-                        </div>
-                      </div>                
-                    </SwiperSlide>
+            <SwiperSlide key={17} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Sancan.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={9} className={styles.Slide}>
-                      <div className={styles.MyImage}>
-                        <div className={styles.shadow}>
+            <SwiperSlide key={18} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Schmid-.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Laços Vila Guilhermina"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/Logo VizoneSouza Horizontal.svg" width={200} height={200} alt={'Cliente da Luziac Marketing : VizoneSouza'}></Image>
-                        </div>
-                      </div>                
-                    </SwiperSlide>
+            <SwiperSlide key={19} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Tânia Imóveis-.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                    <SwiperSlide key={10} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow2}>
+            <SwiperSlide key={20} className={styles.Slide}>
+              <div className={styles.MyImage2}>
+                <div className={styles.shadow2}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/Villasul-.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Laços Vila Guilhermina"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
 
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/casavelogo.svg" width={200} height={200} alt={'Cliente da Luziac Marketing : Casave'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide key={11} className={styles.Slide}>
-                      <div className={styles.MyImage}>
-                        <div className={styles.shadow}>
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/granvellas.svg" width={200} height={200} alt={'Cliente da Luziac Marketing : Gran Vellas'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide key={12} className={styles.Slide}>
-                      <div className={styles.MyImage2}>
-                        <div className={styles.shadow2}>
-
-                        </div>
-                        <div className={styles.content}>
-                          <Image src="/lacoslogo.png" width={200} height={200} alt={'Cliente da Luziac Marketing : Laços Vila Guilhermina'}></Image>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-            </Swiper>
-          </div>
+            <SwiperSlide key={21} className={styles.Slide}>
+              <div className={styles.MyImage}>
+                <div className={styles.shadow}></div>
+                <div className={styles.content}>
+                  <Image
+                    src="/W.Levitt-.png"
+                    width={200}
+                    height={200}
+                    alt={"Cliente da Luziac Marketing : Connect Penha"}
+                  ></Image>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
+      </div>
     </>
-  )
+  );
 }

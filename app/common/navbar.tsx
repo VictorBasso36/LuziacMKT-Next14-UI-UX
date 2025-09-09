@@ -103,8 +103,8 @@ export default function Navbar() {
               <Image
                 src="/mainLogo.png"
                 alt="Luziac - Criando Conexões - Logo"
-                width={320}
-                height={60}
+                width={160}
+                height={30}
               ></Image>
             </Link>
           ) : (
@@ -112,8 +112,8 @@ export default function Navbar() {
               <Image
                 src="/faviicon.svg"
                 alt="Luziac - Criando Conexões - Logo"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
               ></Image>
             </Link>
           )}

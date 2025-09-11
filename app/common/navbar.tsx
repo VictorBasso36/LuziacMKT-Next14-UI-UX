@@ -52,10 +52,10 @@ export default function Navbar() {
   const isMobile = larguraDaJanela <= 1280;
 
   // Show list menu only when: scroll < 10 AND desktop
-  const shouldShowListMenu = scrollY < 10 && isDesktop;
+  const shouldShowListMenu = scrollY < 15 && isDesktop;
 
   // Show hamburger menu when: (scroll < 10 AND mobile) OR (scroll > 10 AND any size)
-  const shouldShowHamburger = (scrollY < 10 && isMobile) || scrollY >= 10;
+  const shouldShowHamburger = (scrollY < 15 && isMobile) || scrollY >= 15;
 
   return (
     <>
@@ -96,12 +96,13 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      <nav className={styles.main}>
+      <nav className={styles.main} style={{ height: scrollY > 15 ? 60 : 120 }}>
         <div className={styles.container}>
           {larguraDaJanela > 550 ? (
-            <Link href="/">
+            <Link href="/" className={styles.logomainlink}>
               <Image
                 src="/mainLogo.png"
+                className={styles.imglogomain}
                 alt="Luziac - Criando Conexões - Logo"
                 width={160}
                 height={30}

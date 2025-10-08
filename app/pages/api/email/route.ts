@@ -69,9 +69,33 @@ export async function POST(req: NextRequest, res: NextResponse) {
     console.log("manual form", formData);
 
     // Enviar a requisição para o webhook
+    const urlEncodedData = new URLSearchParams();
+    urlEncodedData.append(
+      "name-luziac-site",
+      items?.data?.name || items?.name || ""
+    );
+    urlEncodedData.append(
+      "company-luziac-site",
+      items?.data?.company || items?.company || ""
+    );
+    urlEncodedData.append(
+      "tel-luziac-site",
+      String(items?.data?.tel || items?.tel || "")
+    );
+    urlEncodedData.append(
+      "email-luziac-site",
+      items?.data?.email || items?.email || ""
+    );
+
+    console.log("Sending webhook with data:", urlEncodedData.toString());
+
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
-      body: formData,
+      // MUDANÇA 2: Definir o header correto para este formato
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: urlEncodedData,
     });
 
     console.log("webhook form data", webhookResponse);

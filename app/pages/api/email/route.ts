@@ -69,9 +69,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
     // Enviar a requisição para o webhook
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
       body: formData,
     });
 

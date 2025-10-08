@@ -44,7 +44,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
             `,
     };
 
-    await transporter.sendMail(mailOption);
+    // await transporter.sendMail(mailOption);
     console.log("Email sent successfully.");
 
     // --- 2. Lógica para enviar o Webhook (adicionada) ---

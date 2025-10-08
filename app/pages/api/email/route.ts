@@ -70,7 +70,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "multipart/form-data",
       },
       body: formData,
     });

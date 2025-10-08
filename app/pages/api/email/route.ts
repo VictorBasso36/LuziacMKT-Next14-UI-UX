@@ -66,11 +66,15 @@ export async function POST(req: NextRequest, res: NextResponse) {
       items?.data?.email || items?.email || ""
     );
 
+    console.log("manual form", formData);
+
     // Enviar a requisição para o webhook
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       body: formData,
     });
+
+    console.log("webhook form data", webhookResponse);
 
     // Verifica se a chamada ao webhook foi bem-sucedida
     if (!webhookResponse.ok) {

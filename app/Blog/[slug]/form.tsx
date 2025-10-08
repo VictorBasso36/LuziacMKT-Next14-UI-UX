@@ -5,7 +5,10 @@ import { useOpen } from "@/app/common/providerModal";
 import { useState } from "react";
 
 export default function FormBlog({ url, slug }: { url: string; slug: string }) {
+  // 1. Estados para controlar o status do formulário
   const [sucess, setSucess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [hasBackendError, setHasBackendError] = useState(false);
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -13,9 +16,15 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
     Acting: "",
     Company: "",
   });
+
+  // 2. Função de envio atualizada
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    sucess && null;
+    // Reseta os estados de sucesso/erro e ativa o loading
+    setLoading(true);
+    setSucess(false);
+    setHasBackendError(false);
+
     try {
       const response = await fetch("/pages/api/email", {
         method: "POST",
@@ -32,6 +41,7 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
       });
 
       if (response.ok) {
+        // Cenário de sucesso
         const responseData = await response.json();
         setSucess(true);
 
@@ -40,25 +50,42 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
           "_blank"
         );
       } else {
+        // Cenário de erro do backend
         console.error(
           "Erro na solicitação:",
           response.status,
           response.statusText
         );
-        // Lide com o erro conforme necessário
+        setHasBackendError(true);
       }
     } catch (error) {
+      // Cenário de erro de rede/conexão
       console.error("Erro na solicitação:", error);
-      // Lide com o erro conforme necessário
+      setHasBackendError(true);
+    } finally {
+      // Desativa o loading ao final, independentemente do resultado
+      setLoading(false);
     }
   };
 
-  const phoneMask = (value: string) => {
-    return value
-      .replace(/\D/g, "")
-      .replace(/^(\d{2})(\d)/g, "($1) $2")
-      .replace(/(\d)(\d{4})$/, "$1-$2")
-      .slice(0, 20);
+  const phoneMask = (phone: string): string => {
+    let cleaned = String(phone || "").replace(/\D/g, "");
+
+    if (
+      (cleaned.length === 12 || cleaned.length === 13) &&
+      cleaned.startsWith("55")
+    ) {
+      cleaned = cleaned.substring(2);
+    }
+    cleaned = cleaned.slice(0, 11);
+
+    if (cleaned.length > 2) {
+      const ddd = cleaned.substring(0, 2);
+      const number = cleaned.substring(2);
+      return `${ddd} ${number}`;
+    }
+
+    return cleaned;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -100,6 +127,7 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
             <input
               type="text"
               name="Name"
+              required={true}
               value={formData.Name}
               onChange={handleChange}
             />
@@ -111,6 +139,7 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
             <input
               type="text"
               name="Company"
+              required={true}
               value={formData.Company}
               onChange={handleChange}
             />
@@ -122,6 +151,7 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
             <input
               type="text"
               name="Acting"
+              required={true}
               value={formData.Acting}
               onChange={handleChange}
             />
@@ -133,7 +163,8 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
             <input
               type="tel"
               name="Tel"
-              placeholder="DDD + Telefone (11 9 9999-9999)"
+              placeholder="DDD + Telefone (11 99999 9999)"
+              required={true}
               value={formData.Tel}
               onChange={handleChange}
             />
@@ -145,27 +176,37 @@ export default function FormBlog({ url, slug }: { url: string; slug: string }) {
             <input
               type="email"
               name="Email"
+              required={true}
               value={formData.Email}
               onChange={handleChange}
             />
           </label>
         </form>
 
+        {/* 3. Lógica do botão atualizada */}
         <button
           form="myForm"
+          disabled={loading}
           className={styles.submitButton}
           onClick={handleSubmit}
         >
-          {!sucess ? (
+          {loading ? (
             <p>
-              {" "}
-              <span>ENVIAR</span> (ESTOU PRONTO <br />
-              PARA POTENCIALIZAR <br />
-              MINHAS VENDAS.) <span>{" >"}</span>
+              ENVIANDO <span>...</span>
+            </p>
+          ) : hasBackendError ? (
+            <p>
+              ERRO, <span>TENTE NOVAMENTE</span>
+            </p>
+          ) : sucess ? (
+            <p>
+              DADOS <span>ENVIADOS!</span>
             </p>
           ) : (
             <p>
-              DADOS <span>ENVIADOS!</span>{" "}
+              <span>ENVIAR</span> (ESTOU PRONTO <br />
+              PARA POTENCIALIZAR <br />
+              MINHAS VENDAS.) <span>{" >"}</span>
             </p>
           )}
         </button>

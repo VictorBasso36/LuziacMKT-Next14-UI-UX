@@ -44,29 +44,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
             `,
     };
 
-    // await transporter.sendMail(mailOption);
+    await transporter.sendMail(mailOption);
     console.log("Email sent successfully.");
 
     // --- 2. Lógica para enviar o Webhook (adicionada) ---
     const webhookUrl = process.env.BOTCONVERSA || "";
-
-    // Criar o FormData com os dados recebidos
-    const formData = new FormData();
-    formData.append("name-luziac-site", items?.data?.name || items?.name || "");
-    formData.append(
-      "company-luziac-site",
-      items?.data?.company || items?.company || ""
-    );
-    formData.append(
-      "tel-luziac-site",
-      String(items?.data?.tel || items?.tel || "")
-    );
-    formData.append(
-      "email-luziac-site",
-      items?.data?.email || items?.email || ""
-    );
-
-    console.log("manual form", formData);
 
     // Enviar a requisição para o webhook
     const urlEncodedData = new URLSearchParams();
@@ -80,7 +62,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     );
     urlEncodedData.append(
       "tel-luziac-site",
-      String(items?.data?.tel || items?.tel || "")
+      String(items?.data?.tel || items?.tel || "").trim()
     );
     urlEncodedData.append(
       "email-luziac-site",

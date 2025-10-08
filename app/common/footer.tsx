@@ -2,13 +2,16 @@
 import Link from "next/link";
 import styles from "./footer.module.css";
 import Image from "next/image";
-import Divisor from "./divisor";
+
 import { Parallax } from "react-scroll-parallax";
 import { useState } from "react";
 import { useOpen } from "./providerModal";
 
 export default function Footer() {
   const [sucess, setSucess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [hasBackendError, setHasBackendError] = useState(false);
+
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -18,6 +21,9 @@ export default function Footer() {
   });
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setSucess(false);
+    setHasBackendError(false);
     sucess && null;
     try {
       const response = await fetch("/pages/api/email", {
@@ -35,9 +41,7 @@ export default function Footer() {
       });
 
       if (response.ok) {
-        const responseData = await response.json();
         setSucess(true);
-
         window.open(
           "https://wa.me/5511992070343?text=Oii!%20Vi%20o%20site%20da%20Luziac%20e%20quero%20potencializar%20minhas%20vendas%20com%20Marketing%20Imobili%C3%A1rio,%20pode%20me%20ajudar?%22",
           "_blank"
@@ -48,20 +52,41 @@ export default function Footer() {
           response.status,
           response.statusText
         );
-        // Lide com o erro conforme necessário
+        setHasBackendError(true);
       }
     } catch (error) {
       console.error("Erro na solicitação:", error);
-      // Lide com o erro conforme necessário
+      setHasBackendError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const phoneMask = (value: string) => {
-    return value
-      .replace(/\D/g, "")
-      .replace(/^(\d{2})(\d)/g, "($1) $2")
-      .replace(/(\d)(\d{4})$/, "$1-$2")
-      .slice(0, 20);
+  const phoneMask = (phone: string): string => {
+    // 1. Garante que o valor de entrada é uma string e remove tudo que não for dígito.
+    let cleaned = String(phone || "").replace(/\D/g, "");
+
+    // 2. Se o número limpo tem 12 ou 13 dígitos e começa com 55, remove o código do país.
+    if (
+      (cleaned.length === 12 || cleaned.length === 13) &&
+      cleaned.startsWith("55")
+    ) {
+      cleaned = cleaned.substring(2);
+    }
+
+    // 3. NOVO: Limita o total de dígitos para 11 (DDD + Celular).
+    // Isso garante que o número não exceda o tamanho máximo de um celular brasileiro.
+    cleaned = cleaned.slice(0, 11);
+
+    // 4. Adiciona o espaço após o DDD (os dois primeiros dígitos).
+    if (cleaned.length > 2) {
+      const ddd = cleaned.substring(0, 2);
+      const number = cleaned.substring(2);
+      return `${ddd} ${number}`;
+    }
+
+    // 5. Se o número for muito curto, retorna apenas os números limpos.
+    return cleaned;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -195,7 +220,7 @@ export default function Footer() {
                   type="tel"
                   name="Tel"
                   value={formData.Tel}
-                  placeholder="DDD + Telefone (1199999-9999)"
+                  placeholder="DDD + Telefone (11 99999 9999)"
                   required={true}
                   onChange={handleChange}
                 />
@@ -213,17 +238,27 @@ export default function Footer() {
                 />
               </label>
             </form>
-            <button form="myForm" className={styles.submitButton}>
-              {!sucess ? (
+            <button
+              form="myForm"
+              disabled={loading}
+              className={styles.submitButton}
+            >
+              {loading ? (
                 <p>
-                  {" "}
-                  <span>ENVIAR</span> (ESTOU PRONTO <br />
-                  PARA POTENCIALIZAR <br />
-                  MINHAS VENDAS.) <span>{" >"}</span>
+                  ENVIANDO <span>...</span>
+                </p>
+              ) : hasBackendError ? (
+                <p>
+                  ERRO, <span>TENTE NOVAMENTE</span>
+                </p>
+              ) : sucess ? (
+                <p>
+                  CONTATO <span>ENVIADO!</span>
                 </p>
               ) : (
                 <p>
-                  DADOS <span>ENVIADOS!</span>{" "}
+                  INICIAR <span>CONVERSA</span>
+                  {" >"}
                 </p>
               )}
             </button>
